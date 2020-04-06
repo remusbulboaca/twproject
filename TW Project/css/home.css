@@ -1,0 +1,365 @@
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'adelle_rgregular';
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body{
+    margin: 0;
+    background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
+    background-repeat: no-repeat;
+    height:100vh;
+    width:100vw;
+}
+
+header{
+    margin: 0em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+}
+
+header .logoclass
+{
+    flex-grow: 0.8;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "proxima_nova_rgbold";
+    font-size: 30px;
+    font-weight:bolder ;
+    padding-left: 1em;
+}
+ header .button1{
+     text-decoration: none;
+     padding:0.3em 1.2em;
+     color: #191919;
+     background-color: white;
+     font-family: "proxima_nova_rgbold";
+     text-align: center;
+     font-size: 0.7em;
+     border-radius: 2em;
+     padding: 1em 3em
+    }
+
+header .profile
+{
+    width: 2.5em;
+}
+    
+.subtitle{
+    position: absolute;
+        top: 15vh;
+}
+
+.subtitle h1{
+    position: relative;
+    color: white;
+    font-family: "proxima_nova_rgbold";
+    font-size: 3em;
+    padding: 2em 3em 2em 1em;
+}
+
+h1 span::before{
+    content: ' ';
+    position: absolute;
+    width: 2em;
+    background: white;
+    height: .1em;
+    bottom: 4.5em;
+    z-index: -1;
+    margin-left: -.3em;
+}
+
+
+.wrap
+{
+    width: 80%;
+    margin: 2em;
+    
+}
+
+.search{
+    padding-left: 1em;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.searchTerm{
+  width: 100%;
+  border: 1em;
+  padding: 1em 2em;
+  height: 20px;
+  border-radius: 2em 0 0 2em;
+  outline: none;
+  font-family:"proxima_nova_rgregular" ;
+  font-size: 0.8em;
+}
+
+
+.searchButton{
+    width: 4em;
+    height: 46px;
+    border: 1px;
+    text-align: center;
+    background-color: #131313;
+    border-radius: 0 1em 1em 0;
+    cursor: pointer;
+    font-size: 20px;
+    background-image: url(/images/icons8-search-24.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bottom{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family:"proxima_nova_rgregular" ;
+    bottom: 0em;
+   margin-left: 1.5em;
+}
+
+.bottom h3{
+    padding: 2em;
+}
+
+@media (min-width : 657px){
+
+    h1 span::before{
+        content: ' ';
+        position: absolute;
+        width: 2em;
+        background: white;
+        height: .1em;
+        bottom: 3.3em;
+        z-index: -1;
+        margin-left: -.3em;
+    }
+}
+
+@media (min-width : 945px){
+
+    h1 span::before{
+        content: ' ';
+        position: absolute;
+        width: 2em;
+        background: white;
+        height: .1em;
+        bottom: 2em;
+        z-index: -1;
+        margin-left: -.3em;
+    }
+}
+
+
+@media (min-width: 1035px){
+    .subtitle{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        width: 95vw;
+    }
+
+    header
+    {
+        padding: 4em;
+    }
+
+    .subtitle .SPAN{
+       flex-grow: 1;
+    }
+
+
+
+    .subtitle h1{
+        
+        font-size: 4em;
+        padding-left: 2em;
+        margin: 0em;
+        padding-right: 0em;
+    }
+    
+    .wrap{
+        margin-right: 3em;
+    }
+
+    h1 span::before{
+        bottom: 4.5em;
+    }
+
+    .searchTerm{
+        height: 30px;
+        font-size: 1em;
+
+    }
+
+    .searchButton{
+    width: 4em;
+    height: 64px;
+    font-size: 30px;
+    
+    }
+
+
+    .bottom{
+        margin-left: 8em;
+    }
+}
+
+
+
+
+
+@media (min-width: 1505px){
+
+    .subtitle{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        width: 95vw;
+    }
+
+    header
+    {
+        padding: 4em;
+    }
+
+    .subtitle .SPAN{
+       flex-grow: 1;
+    }
+
+
+
+    .subtitle h1{
+        
+        font-size: 6em;
+        padding-left: 2em;
+        margin: 0em;
+        padding-right: 0em;
+    }
+    
+    .wrap{
+        margin-right: 10em;
+    }
+
+    h1 span::before{
+        bottom: 4.5em;
+    }
+
+    .searchTerm{
+        height: 30px;
+        font-size: 1em;
+
+    }
+
+    .searchButton{
+    width: 4em;
+    height: 64px;
+    font-size: 30px;
+    
+    }
+
+
+    .bottom{
+        margin-left: 8em;
+    }
+}
+
+
+
+
+@media (min-width: 2450px){
+
+    .subtitle{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 10%;
+        width: 95vw;
+    }
+
+    header
+    {
+        padding: 4em;
+    }
+
+    .subtitle .SPAN{
+       flex-grow: 1;
+    }
+
+
+
+    .subtitle h1{
+        
+        font-size: 7em;
+        padding-left: 2em;
+        margin: 0em;
+        padding-right: 1em;
+    }
+    
+    .wrap{
+        margin-right: 10em;
+    }
+
+    h1 span::before{
+        bottom: 4.5em;
+    }
+
+    .searchTerm{
+        height: 30px;
+        font-size: 1em;
+
+    }
+
+    .searchButton{
+    width: 4em;
+    height: 64px;
+    font-size: 30px;
+    
+    }
+
+
+    .bottom{
+        margin-left: 8em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
