@@ -28,6 +28,8 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {font-family: "Gobold"; src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot"); src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff") format("woff"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.svg#Gobold") format("svg"); }
+@font-face {font-family: "Gobold Hollow"; src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot"); src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff") format("woff"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.svg#Gobold Hollow") format("svg"); }
 body{
     margin: 0;
     background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
@@ -79,10 +81,16 @@ header .profile
 .subtitle h1{
     position: relative;
     color: white;
-    font-family: "proxima_nova_rgbold";
+    font-family: "Gobold";
     font-size: 3em;
     padding: 2em 3em 2em 1em;
 }
+
+
+h1 span{
+    font-family: "Gobold Hollow";
+}
+
 
 h1 span::before{
     content: ' ';
@@ -176,6 +184,7 @@ h1 span::before{
         bottom: 2em;
         z-index: -1;
         margin-left: -.3em;
+        font-family: "Gobold Hollow";
     }
 }
 
