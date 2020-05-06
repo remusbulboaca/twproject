@@ -53,135 +53,27 @@ header a
     letter-spacing: 1px;
 }
 
-.signup {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.all{
+    display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-left: 10em;
+        height: 70vh; 
+        
 }
-
-.signup h1{
-    
-    font-family: "Gobold";
-    color: #ffffff;
-    letter-spacing: 3px;
-    font-size: 6vh;
-    margin-bottom: 5vh;
-}
-
-.signup span{
-   font-family: "Gobold Hollow";
-}
-
-form{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    
-    
-}
-
-input[type=text]{
-    background: none;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border: 1px solid #ffffff;
-    border-radius: 50px;
-    color: #ffffff;
-    margin: 0em;
-    text-align: center;
-}
-
-input[type=email]{
-    background: none;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border: 1px solid #ffffff;
-    border-radius: 50px;
-    color: #ffffff;
-    text-align: center;
-}
-
-input[type=password]{
-    background: none;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border: 1px solid #ffffff;
-    border-radius: 50px;
-    color: #ffffff;
-    text-align: center;
-}
-
-input[type=button]{
-    background: #ffffff;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border-radius: 50px;
-    border: 0;
-    color: #191919;
-    text-align: center;
-    transition: all 0.3s ease 0s;
-}
-
-
-input[type=button]:hover {
-    letter-spacing: 3px;
-    border-radius: 6px;
-    border-color: #cecece !important;
-    transition: all 0.3s ease 0s;
-        }
-
 .all h2{
-    display: none;
+display: block;
+font-family: "ProximaBold";
+color: white;
+
+width: 400px;
+font-size: 2em;
+padding: 10vw;
+text-align: right;
 }
 
-
-
-
-
-@media (min-width : 750px){
-
-    .all{
-        display: flex;
-            align-items: center;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            margin-left: 10em;
-            height: 70vh; 
-            
-    }
-    .all h2{
-    display: block;
-    font-family: "ProximaBold";
-    color: white;
-    text-align: left;
-    width: 400px;
-    font-size: 2em;
-    padding: 10vw;
+.check{
     text-align: right;
-    }
-
-
-    input[type=password]{
-        padding: 1vh 6vw;
-    }
-    input[type=email]{
-        padding: 1vh 6vw;
-    }
-    input[type=button]{
-        padding: 1vh 6vw;
-    }
-    input[type=text]{
-        padding: 1vh 6vw;
-    }
-
-    .signup h1{
-        margin-bottom: 1em;
-    }
-
-   
 }
