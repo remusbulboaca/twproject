@@ -3,43 +3,11 @@ include('includes/functions/db.php');
 
 
 
+function query($query){
+    GLOBAL $connection;
+    return mysqli_query($connection,$query);
+}
 
-
-    function escape($string){
-        GLOBAL $connection;
-        return mysqli_real_escape_string($connection,$string);
-    }
-    
-    
-
-    //querry function
-    function query($query){
-        GLOBAL $connection;
-        return mysqli_query($connection,$query);
-    }
-    
-    
-
-    //confirmation funtion
-    function confirm($result){
-        GLOBAL $connection;
-        if(!$result){
-            die('Query failed'.mysqli_error($connection));
-        }
-    }
-    
-    
-    //fetch
-    function fetch_data($result){
-        GLOBAL $connection;
-        return mysqli_fetch_assoc($result);
-    }
-    
-    //no of rows
-
-    function no_of_rows($count){
-        return mysqli_num_rows($count);
-    }
 
 function cleanstring($string){
     return htmlentities($string);
@@ -146,6 +114,18 @@ function email_validation($email){
 
 function username_validation($username){
     $sql = "select * from users where username = '$username' ";
+    $result =query($sql);
+    confirm($result);
+    if(fetch_data($result)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function password_validation($password,$username){
+    $sql = "select * from users where password = '$password' and username= '$username'";
     $result =query($sql);
     confirm($result);
     if(fetch_data($result)){
@@ -342,10 +322,6 @@ function forget_pass(){
                     }
                     else{
                         echo '<p style=" color:red ">Can t send the email </p>';
-                        $link_addr="192.168.64.2/colr/codeconfirm.php?email=$email_recover";
-                        echo "<a href=''".$link_addr."'></a>" ;
-                        
-                        
                     }
                     
 
@@ -448,5 +424,314 @@ function recover_password(){
 
 
 }
+
+
+
+//RESET PASSWORD
+
+
+function reset_password(){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        if(isset($_SESSION['token']) &&  $_POST['token']==$_SESSION['token']){
+            //$_SESSION['userName'];
+            $old_password = md5($_POST['oldpassword']);
+            if (password_validation($old_password,$_SESSION['userName'])){
+                if($_POST['password'] == $_POST['repet_password']){
+                    if($_POST['password']==$_POST['oldpassword']){
+                        echo '<p style=" color:red ">New password same with the old one </p>';
+                    }
+                    else{
+                    $new_password=md5($_POST['password']);
+                    $username=$_SESSION['userName'];
+                    $sql = "Update users set password='$new_password' where username = '$username'";
+                    $result = query($sql);
+                            confirm($result);
+                            if($result){
+                                echo '<p style=" color:green ">Pasword changed, we will redirect you to profile page </p>';
+                                header( "refresh:4;url=profile-personal-details.php" );
+                            }
+                        }       
+                }
+                else{
+                    echo '<p style=" color:red ">Password not the same </p>';
+                }
+            }
+            else{
+                echo '<p style=" color:red ">Old password wrong </p>';
+            }
+            
+        }
+
+
+    }
+}
+
+
+
+//FAVORITE
+
+
+
+function get_noofcaps_favorite($username){
+    $sql = "select count(*) from favorite where username='$username' and favorite='1'";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['count(*)'];
+    }
+    else{
+        return false;
+    }
+}
+
+
+function get_cap_name($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.name from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.name from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+
+
+function get_cap_year($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.year from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.year from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+
+
+function get_cap_id($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.id from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['id'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.id from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['id'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+
+function get_cap_image($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.image from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.image from caps c join favorite f on c.id=f.id_cap where username='$username' and favorite='1' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+//COLLECTION
+
+function get_noofcaps($username){
+    $sql = "select count(*) from caps c join users u on c.id_user=u.id where u.username='$username' ";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['count(*)'];
+    }
+    else{
+        return false;
+    }
+}
+
+
+function get_cap_id_collection($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.id from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['id'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.id from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['id'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+
+
+function get_cap_image_collection($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.image from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.image from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+function get_cap_name_collection($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.name from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.name from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+
+
+function get_cap_year_collection($rowId,$username){
+    if($rowId == 1){
+        $sql = "select c.year from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.year from caps c join users u on c.id_user=u.id where username='$username' LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
 
 ?>

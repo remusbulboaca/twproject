@@ -43,24 +43,15 @@ require_once ('includes/functions/config.php');
             <div class="profile">
                 <img src="images/Ellipse 21.png" alt="">
                 <div class="name">
-                    <h1>
-                        
+                    <h1> 
                     <?php get_Fname($_SESSION['userName'])?> <?php get_Lname($_SESSION['userName'])?>
                     </h1>
-                    
-                        
-                    
-                    
                 </div>
-
-                
-
             </div>
-
             <div class="bar">
                 <a href="" class="pd">Personal details</a>
-                <a href="">Favorite items</a>
-                <a href="">Personal Collection</a>
+                <a href="profile-favorite-items.php">Favorite items</a>
+                <a href="profile-personal-collection.php">Personal Collection</a>
             </div>
         </div>
 
@@ -88,7 +79,7 @@ require_once ('includes/functions/config.php');
             </div>
 
         <div class="reset">
-            <input type="button" value="Reset your password">
+            <input type="button" onclick="location.href='reset-password.php'" value="Reset your password">
             
         </div>
             

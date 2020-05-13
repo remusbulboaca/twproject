@@ -115,65 +115,93 @@ padding: 4em 2em;
 .bottom{
     position: relative;
     height: 100%;
-    padding: 8em 4em 0em;
-}
-
-.username h2{
-    font-family:'ProximaBold' ;
-    margin: 0em;
+    padding: 4em 1em 0em;
     
-}
-.email h2{
-    font-family:'ProximaBold' ;
-    margin: 0em;
-}
-.items h2{
-    font-family: 'ProximaBold';
-    margin: 0em;
+
 }
 
 
-.username h3{
-    font-family:'proxima_nova_rgregular';
-    margin: 0em 0 2em;
+
+.bottom h1{
+
+    font-family: "Gobold";
+    color: #181818;
+    letter-spacing: 3px;
+    font-size: 3vh;
+    margin-bottom: 5vh;
+    padding-left: 0.7em;
 }
 
-.email h3{
-    font-family:'proxima_nova_rgregular';
-    margin: 0em 0 2em;
+.bottom span{
+    font-family: "Gobold Hollow";
 }
 
-.items h3{
-    font-family:'proxima_nova_rgregular';
-    margin: 0em 0 2em;
+
+.allcaps{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.bottom a{
-    text-decoration: none;}
 
 
-.bottom input[type=button]{
-    display:flex;
-    justify-content: center;
-    max-width: 440px;
-    margin: 10em auto 1vh ;
-    background: #191919;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border-radius: 50px;
-    border: 0;
-    color: white;
-    text-align: center;
+
+
+
+.product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 2em;
+    margin: 1em 0em;
+    width: 70vw;
+    height: 150px;
+    background-color:white;
+    box-shadow: 9px 13px 51px -3px rgba(0,0,0,0.19);
     transition: all 0.3s ease 0s;
 }
 
-.bottom input[type=button]:hover {
+
+.product:hover{
+    background-color: rgb(228, 228, 228);
+    transition: all 0.3s ease 0s;
+    font-size: 105%;
     letter-spacing: 1px;
-    border-radius: 0px;
-    border-color: #cecece !important;
-    transition: all 0.3s ease 0s;
 }
+
+
+.product img{
+    position: absolute;
+
+    top: 0em;
+    left: 0em;
+    height:auto;
+    width:120px;
+    background-size: cover
+}
+
+.nameCap h2{
+    font-family:'ProximaBold' ;
+    font-weight: bolder;
+    padding-left: 1em;
+    color: black;
+    font-size: 2em;
+}
+
+.nameCap h3{
+    position: absolute;
+    top: 3em;
+    padding-left: 2em;
+    font-family: 'proxima_nova_rgregular';
+    font-size: 1em;
+    color: black;
+}
+
+
+
+
 
 
 
@@ -186,7 +214,7 @@ padding: 4em 2em;
 .top{
     height: 100vh;
     background-color: white;
-    width: 60vw;
+    width: 45vw;
     min-width: 400px;
 }
 
@@ -213,13 +241,10 @@ padding: 4em 2em;
     background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
     background-repeat: no-repeat;
     width: 100%;
-    padding: 10em;
+    padding: 5em 1em 5em;
     color: white;
 }
 
-.bottom input[type=button]{
-    background-color: white;
-}
 
 .bar{
     position: relative;
@@ -235,9 +260,7 @@ padding: 4em 2em;
     -webkit-transform-origin: 100% 100%;
 }
 
-.bottom input[type=button]{
-    color: #191919;
-}
+
 
 .bar a{
     transition: all 0.3s ease 0s;
@@ -252,11 +275,78 @@ padding: 4em 2em;
     border-color: #191919;
 }
 
+.bottom h1{
+
+    font-family: "Gobold";
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-size: 6vh;
+    margin-bottom: 5vh;
+    padding-left: 0.7em;
+}
+
+.bottom span{
+    font-family: "Gobold Hollow";
+}
 
 
 
 
 
 
+
+
+
+
+
+
+.allcaps{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+
+.product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 1em 0 2em;
+    margin: 1em 3em;
+    width: 350px;
+    height: 150px;
+    background-color: white;
+}
+
+.product img{
+    position: absolute;
+    top: 0em;
+    bottom:0;
+    left: 0em;
+}
+.nameCap h2{
+    font-family:'ProximaBold' ;
+    font-weight: bolder;
+    padding-left: 1em;
+    color: black;
+    font-size: 2em;
+}
+
+.nameCap h3{
+    position: absolute;
+    top: 3em;
+    padding-left: 2em;
+    font-family: 'proxima_nova_rgregular';
+    font-size: 1em;
+    color: black;
+}
+
+.arrow{
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    background-color: rgb(255, 255, 255);
+}
 
 }
