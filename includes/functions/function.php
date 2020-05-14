@@ -734,4 +734,179 @@ function get_cap_year_collection($rowId,$username){
 }
 
 
+//PRODUCT PAGE
+
+function get_cap_name_product($id){
+    $sql = "select name from caps where id='$id'";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+}
+
+function get_cap_year_product($id){
+    $sql = "select year from caps where id='$id'";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+}
+
+function get_cap_description($id){
+    $sql = "select description from caps where id='$id'";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['description'];
+    }
+    else{
+        return false;
+    }
+}
+
+function get_cap_history($id){
+    $sql = "select history from caps where id='$id'";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['history'];
+    }
+    else{
+        return false;
+    }
+}
+
+function add_to_favorite($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+       $username= $_SESSION['userName'];
+       $sql = "select favorite from favorite where id_cap='$id' and username='$username'";
+        $result = query($sql);
+        confirm($result);
+        if($row=fetch_data($result)){
+        if($row['favorite']==1){
+            //este deja in favorite la user, il scoatem
+            $sql = "update favorite set favorite=0 where id_cap='$id' and username='$username'";
+            $result = query($sql);
+            confirm($result);
+            echo '<p style=" color:red ">Product no longer available in your favorite list</p>';
+        }
+        if($row['favorite']==0){
+            //nu este in favorite la user, il adaugam
+            $sql = "update favorite set favorite=1 where id_cap='$id' and username='$username'";
+            $result = query($sql);
+            confirm($result);
+            echo '<p style=" color:green ">Product added to your favorite list</p>';
+        }
+        }
+        else{
+            $sql = "insert into favorite(id_cap,username,favorite) values('$id','$username',1) ";
+            $result = query($sql);
+            confirm($result);
+            echo '<p style=" color:green ">Product added to your favorite list</p>';
+        }
+    }
+    
+}
+
+
+function get_cap_image_product($id){
+    $sql = "select image from caps where id='$id'";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+}
+
+
+function get_cap_owner_image($id){
+    $sql="select profileImage from users u join caps c on u.id=c.id_user where c.id='$id'";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['profileImage'];
+    }
+    else{
+        return false;
+    }
+
+}
+
+function get_profile_image($username){
+    $sql="select profileImage from users where username='$username'";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['profileImage'];
+    }
+    else{
+        return false;
+    }
+}
+
+function get_username_by_productid($id){
+    $sql="select username from users u join caps c on u.id=c.id_user where c.id='$id'";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['username'];
+    }
+    else{
+        return false;
+    }
+}
+
+
+function upload_profile_image(){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        
+        $file=$_FILES['file'];
+
+        $name       = $_FILES['file']['name'];  
+        $tmpName  = $_FILES['file']['tmp_name'];
+        $error = $_FILES['file']['error'];
+        $size = $_FILES['file']['size'];
+
+       $fileType1=explode('.',$name);
+       $fileType= strtolower(end($fileType1));
+
+       $allowed = array('jpg','jpeg','png');
+       if(in_array($fileType,$allowed)){
+            if($error==0){
+                    if($size < 20000){
+                            $new_file_name=uniqid('',true).".".$fileType;
+                            $destination= 'images/'.$new_file_name;
+                            move_uploaded_file($tmpName,$destination);
+                            //echo '<p style=" color:green">SUCCES</p>';
+                            //update DB
+                            $username=$_SESSION['userName'];
+                            $sql="update users set profileImage='$new_file_name' where username='$username'";
+                            $result = query($sql);
+                            confirm($result);
+                            echo '<p style=" color:green">SUCCES, redirecting to your profile in 3s </p>';
+                            header( "refresh:3;url=profile-personal-details.php" );
+                    }else{
+                        echo '<p style=" color:red">File size too big</p>';
+                    }
+            }
+            else{
+                echo '<p style=" color:red">Upload error</p>';
+            }
+       }
+       else{
+        echo '<p style=" color:red">Can t upload this type of file, please select another one</p>';
+       }
+    }
+}
 ?>

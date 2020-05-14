@@ -80,6 +80,7 @@ header .logoclass
 
 .profile
 {
+    cursor: pointer; /* "hand" cursor */
     width: 2.5em;
     transition: all 0.3s ease 0s;
 }

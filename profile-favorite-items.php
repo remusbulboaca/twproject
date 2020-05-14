@@ -21,7 +21,7 @@ require_once ('includes/functions/config.php');
         <div class="top">
             <a href="home.php" class="logo">COLR</a>
             <div class="profile">
-                <img src="images/Ellipse 21.png" alt="">
+                <img src="images/<?php echo get_profile_image($_SESSION['userName'])?>" alt="">
                 <div class="name">
                     <h1> 
                     <?php get_Fname($_SESSION['userName'])?> <?php get_Lname($_SESSION['userName'])?>

@@ -60,7 +60,15 @@
     font-size: 30px;
     font-weight:bolder ;
     padding-left: 1em;
+    transition: all 0.3s ease 0s;
   }
+
+  header a:hover{
+    letter-spacing: 5px;
+    transition: all 0.3s ease 0s;
+  }
+
+
   input[type=text]{
     flex-grow: 2;
     border: 0px;
@@ -77,11 +85,16 @@
   }
   .images{
       background-color: #dadada;
+      padding-top: 100px;
+      padding-bottom: 100px;
   }
   .images img{
       display: block;
       margin-left: auto;
       margin-right: auto;
+      
+      width: 150px;
+      height: auto;
   }
 
   .sticky
@@ -115,6 +128,14 @@
     margin-right: 0em;
     margin-left: 0em;
     transform: translate(-50%, -50%);
+    transition: all 0.5s ease 0s;
+  }
+
+  .favorite:hover{
+    width: 50%; 
+    height: 50%; 
+    object-fit: contain; 
+    transition: all 0.5s ease 0s;
   }
 
   .name h1{
@@ -197,6 +218,12 @@
     font-weight:bolder ;
     padding-left: 1.6em;
     top: 6%;
+    transition: all 0.3s ease 0s;
+    }
+
+    .name a:hover{
+      letter-spacing: 5px;
+      transition: all 0.3s ease 0s;
     }
 
     .cap{
@@ -219,17 +246,23 @@
         height: 2.5em;
         left: 3em;
         top: 25%;
-        background: url(/images/next.png);
+        background: url(images/next.png);
         background-position: 20px 8px;
         background-repeat: no-repeat;
        
         color: white;
         border: 1px solid white;
-        border-radius: 0.em;
+        border-radius: 0.5em;
         font-family: "proxima_nova_rgregular";
         font-size: 0.8em;
-        transition: .6s;
-        overflow: hidden;
+        transition: all 0.3s ease 0s;
+    }
+    .name button:hover{
+      color: rgb(199, 199, 199);
+      letter-spacing: 0.2em;
+      border-radius: 0em;
+      transition: all 0.3s ease 0s;
+
     }
 
     .contentText{
