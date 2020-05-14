@@ -909,4 +909,136 @@ function upload_profile_image(){
        }
     }
 }
+
+
+
+
+//POPULAR CAPS
+
+
+function no_of_popular_caps(){
+    $sql = "SELECT COUNT(*) FROM (SELECT f.id, COUNT(*) 'term_count' FROM favorite f WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap)AS subquery";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['COUNT(*)'];
+    }
+    else{
+        return false;
+    }
+}
+
+function get_id_cap_popular($rowId){
+    if($rowId == 1){
+        $sql = "SELECT f.id, COUNT(*) 'term_count' FROM favorite f WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['id'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "SELECT f.id, COUNT(*) 'term_count' FROM favorite f WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['id'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+
+
+function get_cap_image_popular($rowId){
+    if($rowId == 1){
+        $sql = "select c.image, COUNT(*) 'term_count' from caps c join favorite f on c.id=f.id_cap WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.image, COUNT(*) 'term_count' from caps c join favorite f on c.id=f.id_cap WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['image'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+function get_cap_name_popular($rowId){
+    if($rowId == 1){
+        $sql = "select c.name, COUNT(*) 'term_count' from caps c join favorite f on c.id=f.id_cap WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.name, COUNT(*) 'term_count' from caps c join favorite f on c.id=f.id_cap WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['name'];
+    }
+    else{
+        return false;
+    }
+    }
+}
+
+function get_cap_year_popular($rowId){
+    if($rowId == 1){
+        $sql = "select c.year, COUNT(*) 'term_count' from caps c join favorite f on c.id=f.id_cap WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+
+    }
+
+    else{
+        $rowId1=$rowId-1;
+        $sql = "select c.year, COUNT(*) 'term_count' from caps c join favorite f on c.id=f.id_cap WHERE f.favorite='1' GROUP BY f.id_cap ORDER BY term_count DESC, f.id_cap LIMIT $rowId1,$rowId";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['year'];
+    }
+    else{
+        return false;
+    }
+    }
+}
 ?>
