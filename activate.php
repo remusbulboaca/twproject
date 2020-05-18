@@ -17,7 +17,7 @@
 
 <body>
     <header>
-    <a href="/home.html">COLR</a>
+    <a href="/home.php">COLR</a>
     </header>
     
 

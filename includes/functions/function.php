@@ -73,7 +73,7 @@ function user_validation(){
             $Pass=escape($raw_password);
             $Password=md5($Pass);
             $validationCode=md5($Username);
-            $sql = "insert into users(firstName,lastName,email,username,password,activeUser,validationCode)  values ('$Fname','$Lname','$Email','$Username','$Password','0','$validationCode')";
+            $sql = "insert into users(firstName,lastName,email,username,password,activeUser,validationCode,profileImage)  values ('$Fname','$Lname','$Email','$Username','$Password','0','$validationCode','Ellipse_2.png')";
             $result =query($sql);
             confirm($result);
 
@@ -155,6 +155,7 @@ function activation(){
             $sqlupdate = "update users set activeUser ='1' where email= '$Email' and validationCode='$Code'";
             $result2 = query($sqlupdate);
             confirm($result2);
+            header( "refresh:2;url=profile-signin.php" );
         }
         else{
             echo '<p style="color:red">Wrong link </p>';
@@ -448,7 +449,7 @@ function reset_password(){
                             confirm($result);
                             if($result){
                                 echo '<p style=" color:green ">Pasword changed, we will redirect you to profile page </p>';
-                                header( "refresh:4;url=profile-personal-details.php" );
+                                header( "refresh:3;url=profile-personal-details.php" );
                             }
                         }       
                 }
@@ -458,11 +459,39 @@ function reset_password(){
             }
             else{
                 echo '<p style=" color:red ">Old password wrong </p>';
-            }
-            
+            }   
         }
+    }
+}
 
 
+
+
+//DELETE ACCOUNT
+
+function delete_account(){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $username=$_SESSION['userName'];
+        $sql = "select id from users where username= '$username'";
+        $result = query($sql);
+        confirm($result);
+        if($row=fetch_data($result)){
+            $id=$row['id'];
+        }
+        $sql = "delete from users where id='$id'";
+        $result = query($sql);
+        confirm($result);
+
+        $sql = "delete from caps where id_user='$id'";
+        $result = query($sql);
+        confirm($result);
+
+
+        $sql = "delete from favorite where username='$username'";
+        $result = query($sql);
+        confirm($result);
+
+        redirect('logout.php');
     }
 }
 

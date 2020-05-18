@@ -1,3 +1,7 @@
+<?php require_once('includes/functions/function.php') ;
+require_once ('includes/functions/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +23,11 @@
     </div>
 
     <div class="allign">
-    <div class="form" method="post">
-        <button type="submit" class="SignUp" onclick="location.href='profile-signup.php'">Yes</button>
+    <form action="" method="POST" class="form">
+        <input type="submit" value="YES"  class="SignUp" name="go" method="post" >
         <a href="profile-personal-details.php" class="no">NO</a>
-    </div>
+        <?php echo delete_account(); ?>
+    </form>
     </div>
     </div>
 
