@@ -47,8 +47,8 @@
 
 
 <div class="bottom">
-    <h3>Popular caps</h3>
-    <h3>Statistics</h3>
+    <a href="popular-caps.php" >Popular Caps</a>
+    <a href="popular-caps.php" >Statistics</a>
 </div>
 
 

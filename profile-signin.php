@@ -7,6 +7,7 @@ include ('includes/functions/config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="583385079533-2bnsiofgq8n053m2nioku3perfham7lo.apps.googleusercontent.com">
     <title>SignIn</title>
     <link rel="stylesheet" href="css/profile-signin.css">
 </head>
@@ -35,6 +36,9 @@ include ('includes/functions/config.php');
             <div class="signin">
             <button class="button"> Sign In</button>
             <button type="submit" class="Forget" onclick="location.href='forget.php'"  >Forgot password <i class="signup"></i></button>
+            
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
             </div>
             <?php login_validation() ;?>
 
@@ -45,7 +49,7 @@ include ('includes/functions/config.php');
     </div>  
     
         
-    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </body>
 </html>

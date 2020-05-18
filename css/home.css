@@ -173,8 +173,19 @@ h1 span::before{
    margin-left: 1.5em;
 }
 
-.bottom h3{
+.bottom a{
+    font-family:"proxima_nova_rgregular" ;
     padding: 2em;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease 0s;
+}
+
+.bottom a:hover{
+    color: #c4c4c4;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease 0s;
 }
 
 @media (min-width : 657px){

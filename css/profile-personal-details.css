@@ -161,13 +161,11 @@ padding: 4em 2em;
     justify-content: center;
     max-width: 440px;
     margin: 2em auto 1vh ;
-    background: #191919;
     font-family: "proxima_nova_rgregular";
     font-size: 1em;
-    padding: 1.3vh 12vw;
+    padding: 1.3vh 6vw;
     border-radius: 50px;
     border: 0;
-    color: white;
     text-align: center;
     transition: all 0.3s ease 0s;
 }
@@ -176,8 +174,10 @@ padding: 4em 2em;
     letter-spacing: 1px;
     border-radius: 0px;
     border-color: #cecece !important;
-    color: tomato;
+    background:  tomato;
     transition: all 0.3s ease 0s;
+    color: white;
+    
 }
 
 .bottom h1{
@@ -198,10 +198,10 @@ padding: 4em 2em;
 
 .all {
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 .top{
-    height: 100vh;
+    height: 100%;
     background-color: white;
     width: 60vw;
     min-width: 400px;
@@ -232,6 +232,7 @@ padding: 4em 2em;
     width: 100%;
     padding: 10em;
     color: white;
+    height: 100vh;
 }
 
 .bottom input[type=button]{

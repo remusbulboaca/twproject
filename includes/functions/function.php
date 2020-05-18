@@ -79,7 +79,7 @@ function user_validation(){
 
             //send email
             $subject = "Activate your COLR account";
-            $message="Click the link bellow to acctivate the account 
+            $message="Click the link bellow to activate the account 
             
             192.168.64.2/colr/activate.php?email=$Email&Code=$validationCode";
             
@@ -735,6 +735,50 @@ function get_cap_year_collection($rowId,$username){
 
 
 //PRODUCT PAGE
+function cap_owner($id){
+    $sql = "select u.username from caps c join users u on c.id_user=u.id where c.id='$id'";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['username'];
+}
+else{
+    return false;
+}
+}
+
+
+function delete_cap($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+
+        if ( !empty( $_POST["number2"] ) ) {
+        $sql = "delete from caps where id='$id'";
+        $result = query($sql);
+        confirm($result);
+
+
+        $sql2 = "delete from favorite where id_cap='$id'";
+        $result2 = query($sql2);
+        confirm($result2);
+
+        redirect('profile-personal-details.php');
+    }
+}
+}
+
+function delete_from_favorite($id){
+    
+}
+
+
+function confirm_cap_id($id){
+    $sql = "select count(*) from caps where id='$id'";
+    $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['count(*)'];
+    }
+}
 
 function get_cap_name_product($id){
     $sql = "select name from caps where id='$id'";
@@ -784,8 +828,37 @@ function get_cap_history($id){
     }
 }
 
+function get_cap_add_year($id){
+    $sql = "select add_date from caps where id='$id'";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['add_date'];
+    }
+    else{
+        return false;
+    }
+}
+
+function get_cap_no_fav($id){
+    $sql = "select count(*) from favorite where id_cap='$id'";
+        $result = query($sql);
+    confirm($result);
+    if($row=fetch_data($result)){
+        return $row['count(*)'];
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+
 function add_to_favorite($id){
     if($_SERVER['REQUEST_METHOD']=="POST"){
+        if ( !empty( $_POST["number1"] ) ) {
+            
        $username= $_SESSION['userName'];
        $sql = "select favorite from favorite where id_cap='$id' and username='$username'";
         $result = query($sql);
@@ -813,6 +886,7 @@ function add_to_favorite($id){
             echo '<p style=" color:green ">Product added to your favorite list</p>';
         }
     }
+}
     
 }
 
@@ -1040,5 +1114,22 @@ function get_cap_year_popular($rowId){
         return false;
     }
     }
+}
+
+
+
+
+//LOCATION
+
+function get_cap_location($id){
+    $sql = "select location from caps where id='$id'";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['location'];
+}
+else{
+    return false;
+}
 }
 ?>

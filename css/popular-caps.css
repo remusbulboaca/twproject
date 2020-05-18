@@ -147,9 +147,18 @@ padding: 4em 2em;
     font-family: "Gobold";
     color: #181818;
     letter-spacing: 3px;
-    font-size: 8vh;
-    margin-bottom: 5vh;
+    font-size: 8vw;
+    margin-bottom: 0vh;
     padding-left: 0.7em;
+}
+
+.bottom a{
+    text-decoration: none;
+    font-family: 'ProximaBold';
+    color: #dd9120;
+    font-size: 3vw;
+    margin-bottom: 10vh;
+    padding-left: 2em;
 }
 
 .bottom span{
@@ -161,6 +170,7 @@ padding: 4em 2em;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-top: 5vh;
 }
 
 
@@ -232,7 +242,7 @@ align-items: center;
         margin: 0;
         background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
         background-repeat: no-repeat;
-        height:100vh;
+        height:130vh;
         width:100vw;
     }
 
@@ -314,7 +324,7 @@ align-items: center;
     color: #ffffff;
     letter-spacing: 3px;
     font-size: 6vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     padding-left: 0.7em;
 }
 
@@ -380,6 +390,12 @@ align-items: center;
     bottom: 0em;
     right: 0em;
     background-color: rgb(255, 255, 255);
+}
+
+
+.bottom a{
+   
+    font-size: 2vh;
 }
 
 }

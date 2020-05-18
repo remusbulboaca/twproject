@@ -80,9 +80,20 @@
   }
 
   .profile{
+    width: 40px;
      margin-left: 1em;
      margin-top: 0.2em;
+     margin-right: 1em;
+     cursor: pointer;
+     transition: all 0.3s ease 0s;
   }
+
+  .profile:hover{
+    width: 45px;
+    transition: all 0.3s ease 0s;
+  }
+
+
   .images{
       background-color: #dadada;
       padding-top: 100px;
@@ -160,20 +171,68 @@
   }
 
   .contentText{
-      padding: 1em 2em;
+      padding: 1em 0em;
   }
+
+  .contentText img{
+    padding-left: 2em;
+    cursor: pointer;
+}
 
   .contentText h2
   {
     font-family: "proxima_nova_rgbold";
     font-size: 30px;
+    padding-left: 1em;
   }
+  .contentText h5
+  {
+    font-family: "proxima_nova_rgregular";
+    font-weight: lighter;
+    font-size: 13px;
+    padding-left: 1em;
+    color: #777777;
+  }
+  
 
   .contentText p{
     font-family: "proxima_nova_rgregular";
     font-size: 1.3em;
-
+    padding-left: 1.5em;
   }
+
+  #map {
+    width:100%;
+    height: 50vh
+  }
+
+  .delete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .delete input[type=submit]{
+    
+    text-decoration: none;
+    color:white;
+    font-family:'proxima_nova_rgregular';
+    font-size: 0.8em;
+    background:#f22c2c;
+    padding:0.8em 2em;
+    border-radius: 10px;
+    border-style: none;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.delete input[type=submit]:hover{
+    border-radius:0;
+    background:#bf1d1d;
+    letter-spacing: 1px;
+    transition: all 0.3s ease 0s;
+}
+
 
   @media (min-width : 1200px){
       
@@ -281,7 +340,10 @@
 
 
 
-
+    #map {
+      width:100%;
+      height: 50vh
+    }
     
 
 

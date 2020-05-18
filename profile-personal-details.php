@@ -83,7 +83,7 @@ require_once ('includes/functions/config.php');
 
             <input type="button" onclick="location.href='reset-password.php'" value="Reset your password">
             <input type="button" onclick="location.href='change-profile-picture.php'" value="Change profile picture">
-            <input type="button" onclick="location.href='reset-password.php'" value="Delete this account">
+            <input type="button" onclick="location.href='delete-account.php'" value="Delete this account">
         </div>
             
 

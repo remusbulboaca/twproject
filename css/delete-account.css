@@ -1,4 +1,3 @@
-
 @font-face {
 	font-family: 'proxima_nova_rgregular';
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
@@ -32,6 +31,7 @@
 @font-face {font-family: "Gobold"; src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot"); src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff") format("woff"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.svg#Gobold") format("svg"); }
 @font-face {font-family: "Gobold Hollow"; src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot"); src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff") format("woff"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.svg#Gobold Hollow") format("svg"); }
 
+
 body{
     margin: 0;
     background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
@@ -40,201 +40,145 @@ body{
     width:100vw;
 }
 
-header{
-    padding: 2em;
+.all{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
-header a
+
+.top{
+    flex: 1;
+}
+
+.form
 {
-    text-decoration: none;
-    color: #ffffff;
-    font-family: "ProximaBold";
-    font-size: 30px;
-    font-weight:bolder ;
-    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 7em;
 }
 
-.signup {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.top a{
+    display: flex;
     justify-content: center;
-}
-
-.signup h1{
-    
-    font-family: "Gobold";
-    color: #ffffff;
-    letter-spacing: 3px;
-    font-size: 6vh;
-    margin-bottom: 5vh;
-}
-
-.signup span{
-   font-family: "Gobold Hollow";
-}
-
-form{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30%;
-    
-}
-
-input[type=text]{
-    background: none;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border: 1px solid #ffffff;
-    border-radius: 50px;
-    color: #ffffff;
-    margin: 0em;
-    text-align: center;
-}
-
-
-
-
-input[type=password]{
-    background: none;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border: 1px solid #ffffff;
-    border-radius: 50px;
-    color: #ffffff;
-    text-align: center;
-}
-
-input[type=button]{
-    background: #ffffff;
-    font-family: "proxima_nova_rgregular";
-    font-size: 1em;
-    padding: 1.3vh 15vw;
-    border-radius: 50px;
-    border: 0;
-    color: #191919;
-    text-align: center;
-    transition: all 0.3s ease 0s;
-}
-
-
-input[type=button]:hover {
-    letter-spacing: 3px;
-    border-radius: 6px;
-    border-color: #cecece !important;
-    transition: all 0.3s ease 0s;
-        }
-.all h2{
-    display: none;
-}
-
-.Forget{
-    color: #ffffff !important;
-    background: none;
-    font-family: "proxima_nova_rgregular";
-    font-size: 0.8em;
-    padding: 1.2vh 0.5vw;
-    border: 1px solid #ffffff !important;
-    border-radius: 50px;
-    transition: all 0.3s ease 0s;
-    margin: 1em;
-}
-
-.Forget:hover {
-letter-spacing: 3px;
-border-radius: 6px;
-border-color: #cecece !important;
-transition: all 0.3s ease 0s;
-    }
-
-    .signin{
-        position:absolute;
-        bottom:10vh;
-        display:flex;
-        flex-direction: column;
-        
-        
-    }
-    .button {
-   
-        
-        background: #ffffff;
-        font-family: "proxima_nova_rgregular";
-        font-size: 1em;
-        padding: 1vh 10vw;
-        border-radius: 50px;
-        border: 0;
-        color: #191919;
-        text-align: center;
-        transition: all 0.3s ease 0s;
-    }
-    
-    .button:hover{
-        letter-spacing: 3px;
-        border-radius: 6px;
-        border-color: #cecece !important;
-        transition: all 0.3s ease 0s;
-            }
-    
-            @media (min-width : 750px){
-                .button {
-                    padding: 1.5vh 5vw;
-                }
-            }
-    
-            .remember span {
-                color:white;
-                font-family: "proxima_nova_rgregular";
-                padding: 1em ;
-            }
-
-
-
-@media (min-width : 750px){
-
-    .all{
-        display: flex;
-            align-items: center;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            margin-left: 10em;
-            height: 70vh; 
-            
-    }
-    .all h2{
-    display: block;
     font-family: "ProximaBold";
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    font-size: 6em;
+    padding: 0.5em 0 0;
+    letter-spacing: 10px;
+    transition: all 0.3s ease 0s;
+
+}
+
+.top a:hover{
+    transition: all 0.3s ease 0s;
+    letter-spacing: 0.3em;
+}
+
+.top h3{
+    font-family: "ProximaBold";
+    color: rgb(187, 59, 59);
+    text-align: left;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 2.3vh;
+    padding: 3em;
+}
+
+.next{
+    display: flex;
+    align-items: center;
+}
+
+.next img{
+    height: 1em;
+}
+
+.next h4{
+    font-family: "proxima_nova_rgregular";
     color: white;
     text-align: left;
-    width: 400px;
-    font-size: 2em;
-    padding: 10vw;
-    text-align: right;
-    }
-
-    
-
-    input[type=password]{
-        padding: 1vh 6vw;
-    }
-    
-    input[type=button]{
-        padding: 1vh 6vw;
-    }
-    input[type=text]{
-        padding: 1vh 6vw;
-    }
-
-    .signup h1{
-        margin-bottom: 1em;
-    }
-
-    form{
-        padding: 0em;
-    }
-
-   
+    font-size: 2.3vh;
+    padding: 0  1em 0 3em;
 }
+
+
+
+.SignUp{
+letter-spacing: 1px;
+border: none;
+border-radius: 50px;
+background: #83e66b;
+color: #fff8f8 ;
+padding: 1em 7em;
+font-family: "ProximaBold";
+font-size: 1em;
+text-transform: uppercase;
+transition: all 0.3s ease 0s;
+margin: 2.5em;
+}
+
+.SignUp:hover {
+color: #ffffff !important;
+border-radius: 6px;
+letter-spacing: 5px;
+border-color: #89c45a !important;
+transition: all 0.3s ease 0s;
+background:  #59a13d;
+    }
+
+
+
+    .no{
+        text-decoration: none;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 50px;
+        background: #da5147;
+        color: #fff8f8 ;
+        padding: 1em 7em;
+        font-family: "ProximaBold";
+        font-size: 1em;
+        text-transform: uppercase;
+        transition: all 0.3s ease 0s;
+        margin: 2.5em;
+        }
+        
+        .no:hover {
+        color: #ffffff !important;
+        border-radius: 6px;
+        letter-spacing: 5px;
+        border-color: #c43434 !important;
+        transition: all 0.3s ease 0s;
+        background:  #b33a3a;
+            }
+
+
+
+    @media (min-width : 1200px){
+        .all{
+            flex-direction: row;
+            justify-content: space-between
+        }
+
+        .form{
+           margin-right: 10em; 
+        }
+
+        .top{
+            display: flex;
+            flex-direction: column;
+            flex: 0;
+            margin-left: 5em;
+        }
+
+        
+
+        
+    }
