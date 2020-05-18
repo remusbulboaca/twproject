@@ -1,3 +1,6 @@
+<?php require_once('includes/functions/function.php') ;
+require_once ('includes/functions/config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,7 @@
 <body>
     <header>
             <a href="home.php" class="logoclass" >COLR</a>
-            <a href="" class="button1" >ADD PRODUCT</a>
+            <a href="addproduct.php" class="button1" >ADD PRODUCT</a>
             <img src=<?php echo "images/icons8-male-user-48.png" ?> alt="" class="profile" onclick="location.href='profile-personal-details.php'">
             
     </header>
@@ -33,19 +36,15 @@
     </div>
     
         <div class="wrap">
-            <div class="search">
-                
-                        <input type="text" class="searchTerm" placeholder="You can search caps or users" name="search">
+            
+                <form action="" class="search" method="POST">
+                        <input type="text" class="searchTerm" placeholder="You can search caps or users" name="search" id="search">
                         <button type="submit" class="searchButton" > <i class="b-search"></i></button>
-                
-        </div>
-        </div>
-
+                </form>
+                <?php redirect_search() ?>
         </div>
 
-
-
-
+        </div>
 <div class="bottom">
     <a href="popular-caps.php" >Popular Caps</a>
     <a href="popular-caps.php" >Statistics</a>

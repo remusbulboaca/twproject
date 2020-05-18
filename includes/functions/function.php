@@ -165,6 +165,8 @@ function activation(){
 }
 
 
+
+
 //login validation
 
 function login_validation(){
@@ -1160,5 +1162,16 @@ if($row=fetch_data($result)){
 else{
     return false;
 }
+}
+
+
+
+//REDIRECT SEARCH
+
+function redirect_search(){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $url="search.php?search=".$_POST['search']."&submit=";
+        redirect('$url');
+    }
 }
 ?>
