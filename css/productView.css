@@ -302,7 +302,7 @@
         position: absolute;
         visibility: visible;
         width: 16em;
-        height: 2.5em;
+        padding: 0.8em 1em;
         left: 3em;
         top: 25%;
         background: url(images/next.png);
@@ -315,10 +315,11 @@
         font-family: "proxima_nova_rgregular";
         font-size: 0.8em;
         transition: all 0.3s ease 0s;
+        cursor: pointer;
     }
     .name button:hover{
       color: rgb(199, 199, 199);
-      letter-spacing: 0.2em;
+      letter-spacing: 0.1em;
       border-radius: 0em;
       transition: all 0.3s ease 0s;
 

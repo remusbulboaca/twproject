@@ -141,6 +141,7 @@ padding: 4em 2em;
 display: flex;
 flex-direction: column;
 align-items: center;
+
 }
 
 
@@ -161,6 +162,7 @@ align-items: center;
     background-color:white;
     box-shadow: 9px 13px 51px -3px rgba(0,0,0,0.19);
     transition: all 0.3s ease 0s;
+    
 }
 
 
@@ -169,6 +171,7 @@ align-items: center;
     transition: all 0.3s ease 0s;
     font-size: 105%;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 

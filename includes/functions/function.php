@@ -797,9 +797,7 @@ function delete_cap($id){
 }
 }
 
-function delete_from_favorite($id){
-    
-}
+
 
 
 function confirm_cap_id($id){
@@ -1171,7 +1169,7 @@ else{
 function redirect_search(){
     if($_SERVER['REQUEST_METHOD']=="POST"){
         $url="search.php?search=".$_POST['search']."&submit=";
-        redirect('$url');
+        redirect($url);
     }
 }
 ?>

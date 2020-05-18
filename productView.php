@@ -26,11 +26,19 @@ require_once ('includes/functions/config.php');
         <header>
              <a href="">COLR</a>
             <div class="search">
-                <form action=""> 
-                    <label for="search"></label>
-                    <input type="text" name="search" id="search">
-                    
-                </form>
+            <form method="get" action="search.php" onsubmit="return validate();">
+                <input type="text" id="search" name ="search" autocomplete="off" placeholder="You can search caps or users">
+            </form>
+
+            <script type="text/JavaScript">
+            function validate() {
+                if (document.getElementById("search").value == "") {
+                    return false; //Stop the form from submitting
+                }
+            }
+            </script>
+
+
             </div>
             <div class="profile">
                 <img src=<?php echo "images/icons8-male-user-48-2.png" ?> alt="" class="profile" onclick="location.href='profile-personal-details.php'">
@@ -48,7 +56,7 @@ require_once ('includes/functions/config.php');
     <div class="name">
         
         <a href="home.php">COLR</a>
-        <button type ="button"> Return to search </button>
+        <button type ="button" onclick="javascript:window.history.back(-1);return false;"> Return to previous page </button>
         <div class="cap">
             <h1><?php  echo get_cap_name_product($id) ?></h1>
                 <h4> est <?php  echo get_cap_year_product($id) ?></h4>
