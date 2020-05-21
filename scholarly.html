@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="keywords" content="project, infoiasi, web">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <h1>COLR</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Andrei Mija, 
+          Remus Bulboaca, 
+          Dragos Radeanu
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        Sa se realize o aplicatie Web destinata colectionarilor de capace, dopuri si etichete specifice recipientelor folosite pentru inmagazinarea bauturilor (ne)alcoolice. Pe baza facilitatilor de cautare multi-criteriala implementate, utilizatorii autentificati vor putea crea, inventaria si partaja informatii privind artefactele detinute in functie de diverse caracteristici: atribute fizice, imagine, valoare, tara de provenienta, istoric al folosirii efective etc. Se va oferi suport pentru import/export de date. Se vor genera statistici diverse disponibile in formate deschise – minimal, CSV si DocBook. Se va realiza, de asemenea, un clasament al celor mai populare obiecte colectate, disponibil si ca flux de date RSS.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introduction</h2>
+      <p>
+        COLR este o platforma in care useri se pot inregistra si autentifica pentru gestionarea colectiilor de capace. La inregistrare useri vor furniza site-ului informatii precum numele, prenumele, email, username (unic), parola.
+        Site-ul verifica username-ul si email-ul sa fie unic in baza de date. In caz ca exista deja un user cu aceste campuri site-ul afiseaza eroarea respectiva. Toate campurile sunt obligatorii iar fiecarui utilizator ii corespunde un id generat automat. De asemenea parola este criptata in format MD5. Un cont nou trebuie activat folosind un link trimis pe email.
+        Codul de verificare este unic generat. In caz ca un utilizator si-a uitat parola se va genera un token pentru securitate dar si un cookie pentru a avea doar 5 minute la dispozitie. Daca email-ul este corect si apartine unui user din baza de date 
+        acesta va prima pe email un link pentru recuperarea perolei. Dupa 5 minute linkul expira si trebuie generat altul. La autentificare este posibila functia de remember me ce permite user-ului sa ramana autentificat chiar si la inchiderea browserului.
+         Daca este gresit username-ul sau parola platforma afiseaza eroarea.
+      </p>
+      <p>
+        Adaugarea unui produs se face printr-un formular in care user-ul completeaza numele, anul, descrierea, istoria si locatia produsului. Locatia este verificata sa fie una valida. Produsul este trimis catre Admin Panel in sectiunea pending 
+        pentru a fi aprobat de catre un admin. Astfel, ne concentram pe corectitudinea si integritatea produselor postate. Fiecare imagine urcata are o denumire unica pentru nu a exista eventuale probleme legate de suprascriere a fisierelor
+      </p>
+      <p>
+        Pagina produselor contin detalii despre acestea preluate din baza de date precum si o harta cu locatia. Din aceasta pagina se poate accesa pagina de search, profilul userului ce are capacul dar si profilul personal.
+         De asemenea daca produsul apartine userului autentifict acesta poate fi sters simultan din baza de date a produselor si a favoritelor. Produsul poate fi adaugat la favorite de catre orice user sau scos.
+      </p>
+      <p>
+        Pagina de search afiseaza in functie de cautare capacele si useri. Acestea sunt generate automat prin interogarea bazei de date. Se pot sorta dupa an, locatie dar si data la care au fost adaugate.
+      </p>
+      <p>
+        Pagina de profil contine :
+      </p>
+      <ul>
+        <li>Vizualizarea detaliilor persoanle pentru a contacta userul</li>
+        <li>Vizualizarea produselor personale generate automat din baza de date </li>
+        <li>
+          Vizualizarea produselor pe lista de favorite
+        </li>
+      </ul>
+      <p>
+        Pe pagina de profil personal sunt de asemenea adaugate optiunea de logout, schimbare a pozei de profil, stergerea contului definitiv dar si resetare a parolei.
+      </p>
+      
+    </section>
+    <section id="structure">
+      <!-- review? -->
+      <h2>Structure</h2>
+      <p>
+        Pentru prezentarea structurii am folosit diagrame uml
+      </p>
+      <section id="SignIn-SignUp">
+        <!-- review? -->
+        <h3>Sistemul de SignIn-SignUp</h3>
+        
+        <figure typeof="sa:image">
+        <img src="images/TW.vpd-1.jpg" alt="Trulli" style="width:100%">
+        <figcaption>Fig.1 - Sistemul de Sign-In, Sign-up.</figcaption>
+        </figure>
+      </section>
+      
+      <section id="Profil-Product-Search">
+        <!-- review? -->
+        <h3>Sistemul de Profil-Product-Search</h3>
+        <figure typeof="sa:image">
+        <img src="images/TW.vpd-2.jpg" alt="Trulli" style="width:100%">
+        <figcaption>Fig.1 - Sistemul de Profil-Product-Search.</figcaption>
+        </figure>
+      </section>
+      
+
+      <section id="Database system">
+        <!-- review? -->
+        <h3>Sistemul de Database-Product-User</h3>
+        <figure typeof="sa:image">
+        <img src="images/TW.vpd-3.jpg" alt="Trulli" style="width:100%">
+        <figcaption>Fig.1 - Sistemul de Database-Product-User.</figcaption>
+        </figure>
+        <p>Fiecare </p>
+      </section>
+
+
+
+
+      <section id="Database">
+        <!-- review? -->
+        <h3>Databse schema</h3>
+        <section id="Users DB">
+            <h3>Users DB</h3>
+        <p>
+          In tabela users sunt stocate toate informatiile despre useri inregistrati pe platforma. Parola este criptata MD5 iar validation code reprezinta codul generat unic pentru activarea contului si resetarea parolei.
+           Campul profile image reprezinta imaginea de profil a utilizatorului al carui nume este generat unic.
+        </p>
+        <pre><code>
+            {
+            `id` int(11) NOT NULL,
+            `email` varchar(50) NOT NULL,
+            `firstName` varchar(30) NOT NULL,
+            `lastName` varchar(30) NOT NULL,
+            `username` varchar(30) NOT NULL,
+            `password` varchar(300) NOT NULL,
+            `validationCode` text NOT NULL,
+            `activeUser` tinyint(4) NOT NULL,
+            `profileImage` varchar(100) NOT NULL
+            }
+                      </code></pre>
+                    </section>
+
+                    <section id="Product,Pending DB">
+                        <h3>Product,Pending DB</h3>
+                    <p>
+                      In tabela products si pending este adaugat fiecare produs, locatia fiind validata in formular.Fiecare produs este adaugat prima data in tabela pending, urmand a fi confirmat de catre un admin din Admin Panel
+                    </p>
+                    <pre><code>
+            {
+              `id` int(11) NOT NULL,
+               `id_user` int(11) NOT NULL,
+               `name` varchar(200) NOT NULL,
+               `year` int(11) NOT NULL,
+               `image` varchar(1000) NOT NULL,
+               `description` varchar(5000) NOT NULL,
+               `history` varchar(5000) NOT NULL,
+               `location` varchar(1000) NOT NULL,
+               `add_date` date NOT NULL DEFAULT current_timestamp()
+            }
+                                  </code></pre>
+                                </section>
+
+
+
+                                <section id="Favorite DB">
+                                    <h3>Favorite DB</h3>
+                                <p>
+                                  
+                                </p>
+                                <pre><code>
+            {
+               `id` int(100) NOT NULL,
+               `id_cap` int(100) NOT NULL,
+               `username` varchar(1000) NOT NULL,
+               `favorite` int(10) NOT NULL
+            }
+                                              </code></pre>
+                                            </section>                                                  
+                </section>
+
+    </section>
+
+                <section id="APIs">
+                    <!-- review? -->
+                    <h2>APIs</h2>
+                    <p>Pentru a afisa harta cu locatia produselor am folosit Google Maps API, activand KEY-ul pentru Javascript si Geocoder.</p>
+                    <a href="https://developers.google.com/maps/documentation/javascript/tutorial">Maps Javascript API</a>
+                    <p></p>
+                    <a href="https://developers.google.com/maps/documentation/geocoding/start?utm_source=google&utm_medium=cpc&utm_campaign=FY18-Q2-global-demandgen-paidsearchonnetworkhouseads-cs-maps_contactsal_saf&utm_content=text-ad-none-none-DEV_c-CRE_397052992727-ADGP_Hybrid+%7C+AW+SEM+%7C+SKWS+~+Places+%7C+EXA+%7C+Geocoding+API-KWID_43700049595992247-kwd-301485311002-userloc_1011799&utm_term=KW_geocoding%20api-ST_geocoding+api&gclid=Cj0KCQjwzZj2BRDVARIsABs3l9IgmQ2a1opThRr231JYtfGB_e7bWPWt5nj7dA6ECqszKLPWWjzCUyMaApemEALw_wcB">Geocoding API</a>
+                    </section>
+
+                    <section id="Admin Panel">
+                        <!-- review? -->
+                        <h2>Admin Panel</h2>
+
+                        <p></p>
+                        </section>
+
+  </body>
+</html>

@@ -104,7 +104,7 @@ require_once ('includes/functions/config.php');
       }
 
       function geocodeAddress(geocoder, resultsMap) {
-        <?php $location="Iasi"?>  
+        
         var address = document.getElementById('address').value;
         geocoder.geocode({'address': address}, function(results, status) {
           if (status === 'OK') {
