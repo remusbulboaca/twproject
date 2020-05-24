@@ -1,0 +1,232 @@
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ProximaBold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'adelle_rgregular';
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {font-family: "Gobold"; src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot"); src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff") format("woff"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.svg#Gobold") format("svg"); }
+@font-face {font-family: "Gobold Hollow"; src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot"); src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff") format("woff"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.svg#Gobold Hollow") format("svg"); }
+
+
+body{
+    margin: 0;
+    background-color: black;
+}
+
+.all{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.right{
+    background-color: white;
+    height: 100vh;
+    width: 72%;
+    border-radius: 2.5em 0em 0em 2.5em;
+    
+}
+.left{
+    height: 100vh;
+    width: 28%;
+    margin-right: 1em;
+}
+.logo{
+    padding: 4em 3em 4em 4em;
+}
+.logo a{
+    text-decoration: none;
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    color: white;
+    font-size: 3.5vw;
+}
+
+.logo span{
+    font-size: 1vw;
+}
+
+.menu{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 5em;
+
+}
+.menu a{
+    text-decoration: none;
+    font-family: 'proxima_nova_rgregular';
+    color: white;
+    padding: 0.3em 0.5em;
+    font-size: 1vw;
+    transition: all 0.3s ease 0s;
+}
+
+.menu a:hover{
+    letter-spacing: 0.2vw;
+    transition: all 0.3s ease 0s;
+}
+
+.menu h2{
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    color: white;
+    font-size: 1.5vw;
+}
+
+.members {
+    display: flex;
+    flex-direction: column;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+}
+
+.db {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ------------------------------------ */
+
+
+.deleteAlert{
+    font-family: "proxima_nova_rgregular";
+    font-size: 1.2em;
+    padding: 0.7em 7vw;
+}
+
+.btn{
+    border: none;
+    background-color: #e7e7e7;
+    text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 5px 10px;
+  font-family:"proxima_nova_rgregular" ;
+  color: rgb(102, 102, 102);
+  
+}
+
+.right h1{
+    font-family: 'Gobold';
+    font-size: 4em;
+    padding: 0.7em 7vw;
+}
+
+.search{
+    padding-left: 7vw;
+    width: 40%;
+    display: flex;
+    position: relative;
+}
+input[type="text"] {
+    width: 40%;
+  border: 1em;
+  padding: 1.05em 2em;
+  height: 20px;
+  border-radius: 2em  ;
+  background-color: rgb(231, 231, 231);
+  outline: none;
+  font-family:"proxima_nova_rgregular" ;
+  font-size: 0.8em;
+    }
+
+
+
+/* ------------------------------------ */
+
+.table-div{
+    margin-top: 5em;
+}
+
+table {
+
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 57vw;
+    margin:0 auto;
+    position: relative;
+  }
+  table * {
+    position: relative;
+  }
+  table td, table th {
+    padding-left: 8px;
+  }
+  table thead tr {
+    font-family: 'ProximaBold';
+    color: white;
+    height: 60px;
+    background: #000000;
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table th {
+    text-align: left;
+  }
+  table td.l, table th.l {
+    text-align: right;
+  }
+  table td.c, table th.c {
+    text-align: center;
+  }
+  table td.r, table th.r {
+    text-align: center;
+  }
+  
+  
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tbody tr {
+    font-family: 'proxima_nova_rgregular';
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }

@@ -28,6 +28,8 @@ require_once ('includes/functions/config.php');
     transition: all 0.3s ease 0s;
 }
 
+
+
 </style>
 
 <body>
@@ -77,6 +79,9 @@ require_once ('includes/functions/config.php');
             <div class="logout">
             <a href="logout.php">Logout</a>
             </div>
+                     
+            
+
             </div>
 
         <div class="reset">
@@ -84,6 +89,17 @@ require_once ('includes/functions/config.php');
             <input type="button" onclick="location.href='reset-password.php'" value="Reset your password">
             <input type="button" onclick="location.href='change-profile-picture.php'" value="Change profile picture">
             <input type="button" onclick="location.href='delete-account.php'" value="Delete this account">
+
+            
+                <?php if(admin()==true){
+                       echo(" <input type=\"button\" onclick=\"location.href='admin-panel.php'\" value=\"Admin Panel\">");
+                }
+                else{
+                    echo"";
+                }?>
+             
+
+
         </div>
             
 

@@ -217,6 +217,12 @@ function login($raw_userName,$raw_password,$remember){
 
                 }
                 $_SESSION['userName']=$raw_userName;
+                if($row['admin']==1){
+                $_SESSION['admin']=$row['admin'];
+                }
+                if($row['GM']==1){
+                    $_SESSION['GM']=$row['GM'];
+                    }
                 return true;
             }
             else{
@@ -231,6 +237,24 @@ function login($raw_userName,$raw_password,$remember){
 
 function loggedIn(){
     if($_SESSION['userName']){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function admin(){
+    if(isset($_SESSION['admin'])){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function gm(){
+    if(isset($_SESSION['GM'])){
         return true;
     }
     else{
@@ -496,6 +520,60 @@ function delete_account(){
         redirect('logout.php');
     }
 }
+
+function delete_account_ajax($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $sql = "select username from users where id= '$id'";
+        $result = query($sql);
+        confirm($result);
+        if($row=fetch_data($result)){
+            $username=$row['username'];
+        }
+        $sql = "delete from users where id='$id'";
+        $result = query($sql);
+        confirm($result);
+
+        $sql = "delete from caps where id_user='$id'";
+        $result = query($sql);
+        confirm($result);
+
+
+        $sql = "delete from favorite where username='$username'";
+        $result = query($sql);
+        confirm($result);
+
+        echo'<p style=" color:red " class="deleteAlert">Account deleted </p>';
+        header("Refresh:1; url=admin-page-users.php");
+    }
+}
+
+
+function add_account_ajax($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $sql = "update users set admin='1' where id= '$id'";
+        $result = query($sql);
+        confirm($result);
+        
+
+        echo'<p style=" color:green " class="deleteAlert">Admin added </p>';
+        header("Refresh:1; url=admin-page-users.php");
+    }
+}
+
+function unset_admin_ajax($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $sql = "update users set admin='0' where id= '$id'";
+        $result = query($sql);
+        confirm($result);
+        
+
+        echo'<p style=" color:green " class="deleteAlert">Account no longer admin </p>';
+        header("Refresh:1; url=admin-page-users.php");
+    }
+}
+
+
+
 
 
 
@@ -1172,4 +1250,38 @@ function redirect_search(){
         redirect($url);
     }
 }
+
+
+
+
+
+//ADMIN
+
+function no_of_users(){
+    $sql = "select count(*) from users";
+    $result = query($sql);
+    confirm($result);
+if($row=fetch_data($result)){
+    return $row['count(*)'];
+}
+}
+
+function no_of_caps(){
+    $sql = "select count(*) from caps";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['count(*)'];
+}
+}
+
+function no_of_caps_today(){
+    $sql = "select count(*) from caps where add_date=";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['count(*)'];
+}
+}
+
 ?>
