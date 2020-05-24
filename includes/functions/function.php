@@ -572,7 +572,64 @@ function unset_admin_ajax($id){
     }
 }
 
+function delete_product_ajax($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+    $sql = "delete from caps where id='$id'";
+    $result = query($sql);
+    confirm($result);
 
+
+    $sql2 = "delete from favorite where id_cap='$id'";
+    $result2 = query($sql2);
+    confirm($result2);
+    }
+    echo'<p style=" color:green " class="deleteAlert">Product deleted </p>';
+    header("Refresh:1; url=admin-view-products.php");
+}
+
+
+function pending_add_ajax($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $sql = "select * from pending where id='$id'";
+        $result = query($sql);
+        confirm($result);
+        if($row=fetch_data($result)){
+            $id_user=$row['id_user'];
+            $name=$row['name'];
+            $year=$row['year'];
+            $image=$row['image'];
+            $description=$row['description'];
+            $history=$row['history'];
+            $location=$row['location'];
+            $sql2 = "insert into caps(id_user,name,year,image,description,history,location) values('$id_user',' $name','$year','$image','$description','$history','$location')";
+            $result2 = query($sql2);
+            confirm($result2);
+
+            $sql3 = "delete from pending where id='$id'";
+            $result3 = query($sql3);
+            confirm($result3);
+
+            echo'<p style=" color:green " class="deleteAlert">Product Added</p>';
+            header("Refresh:1; url=admin-pending-products.php");
+        }
+        else{
+            return false;
+        }
+    
+    }
+}
+
+
+function pending_delete_ajax($id){
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $sql3 = "delete from pending where id='$id'";
+            $result3 = query($sql3);
+            confirm($result3);
+
+            echo'<p style=" color:red " class="deleteAlert">Product Rejected from pending</p>';
+            header("Refresh:1; url=admin-pending-products.php");
+    }
+}
 
 
 

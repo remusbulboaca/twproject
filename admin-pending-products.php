@@ -47,7 +47,7 @@ include ('includes/functions/config.php');
                         </div>
                     <h2>Products</h2>
                         <div class="products">
-                        <a href="admin-view-products.php">View products</a>
+                            <a href="admin-view-products.php">View products</a>
                             <a href="admin-view-favorite.php">View favorites</a>
                             <a href="admin-pending-products.php">Pending</a>
                         </div>
@@ -61,12 +61,12 @@ include ('includes/functions/config.php');
 
         <div class="right">
             
-            <h1>users</h1>
+            <h1>products</h1>
             <div class="search">
-            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search name">
+            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search by id">
             </div>
             <?php 
-            $sql = "select * from users where admin='0'";
+            $sql = "select * from pending order by add_date desc";
             $result = query($sql);
             confirm($result);
             ?>
@@ -74,23 +74,31 @@ include ('includes/functions/config.php');
             <div class="table-div">
             <?php  
             if(isset($_POST['submitDeleteBtn'])){
-                $id=$_POST['keyToDelete'];
-                delete_account_ajax($id);
+                $id=$_POST['key'];
+                pending_delete_ajax($id);
             }
+
+            if(isset($_POST['submitAcceptBtn'])){
+                $id=$_POST['key'];
+                pending_add_ajax($id);
+            }
+
             ?>  
             <table id="table-data">
             <thead>
                     <tr>
                         <th>id</th>
-                        <th>email</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Validation Code</th>
-                        <th>activeUser</th>
-                        <th>Profile Image</th>
+                        <th>id_user</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>History</th>
+                        <th>Location</th>
+                        <th>Date</th>
                         <th>Select </th>
                         <th>Delete </th>
+                        <th>Accept </th>
                     </tr>
                     
                 </thead> 
@@ -100,18 +108,22 @@ include ('includes/functions/config.php');
                     <tr>
                      <form action="" method="post" role="form">  
                     <td><?= $row['id'];?></td>
-                    <td><?= $row['email'];?></td>
-                    <td><?= $row['firstName'];?></td>
-                    <td><?= $row['lastName'];?></td>
-                    <td><?= $row['username'];?></td>
-                    <td><?= $row['validationCode'];?></td>
-                    <td><?= $row['activeUser'];?></td>
-                    <td><?= $row['profileImage'];?></td>
+                    <td><?= $row['id_user'];?></td>
+                    <td><?= $row['name'];?></td>
+                    <td><?= $row['year'];?></td>
+                    <td><?= $row['image'];?></td>
+                    <td><?= $row['description'];?></td>
+                    <td><?= $row['history'];?></td>
+                    <td><?= $row['location'];?></td>
+                    <td><?= $row['add_date'];?></td>
                     <td>
-                        <input type="checkbox" name="keyToDelete" value="<?php echo $row['id']; ?> required">
+                        <input type="checkbox" name="key" value="<?php echo $row['id']; ?>" required>
                     </td>
                     <td>
-                        <input type="submit" name="submitDeleteBtn" class="btn">
+                        <input type="submit" name="submitDeleteBtn" class="btn" value="Delete">
+                    </td>
+                    <td>
+                        <input type="submit" name="submitAcceptBtn" class="btn" value="Accept">
                     </td>
                     </form> 
                     </tr>
@@ -133,7 +145,7 @@ include ('includes/functions/config.php');
         serverResponse.innerHTML=this.responseText;
     }
 
-    xhr.open("POST","ajax-users.php");
+    xhr.open("POST","ajax-pending.php");
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("name="+input)
     }

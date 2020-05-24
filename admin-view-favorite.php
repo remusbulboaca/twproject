@@ -47,7 +47,7 @@ include ('includes/functions/config.php');
                         </div>
                     <h2>Products</h2>
                         <div class="products">
-                        <a href="admin-view-products.php">View products</a>
+                            <a href="admin-view-products.php">View products</a>
                             <a href="admin-view-favorite.php">View favorites</a>
                             <a href="admin-pending-products.php">Pending</a>
                         </div>
@@ -61,36 +61,27 @@ include ('includes/functions/config.php');
 
         <div class="right">
             
-            <h1>users</h1>
+            <h1>products</h1>
             <div class="search">
-            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search name">
+            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search by username">
             </div>
             <?php 
-            $sql = "select * from users where admin='0'";
+            $sql = "select c.id,c.name,f.username,c.year,c.location,c.add_date from favorite f join caps c on f.id_cap=c.id where f.favorite='1' ";
             $result = query($sql);
             confirm($result);
             ?>
             
             <div class="table-div">
-            <?php  
-            if(isset($_POST['submitDeleteBtn'])){
-                $id=$_POST['keyToDelete'];
-                delete_account_ajax($id);
-            }
-            ?>  
+            
             <table id="table-data">
             <thead>
                     <tr>
-                        <th>id</th>
-                        <th>email</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>id Product</th>
+                        <th>Product</th>
                         <th>Username</th>
-                        <th>Validation Code</th>
-                        <th>activeUser</th>
-                        <th>Profile Image</th>
-                        <th>Select </th>
-                        <th>Delete </th>
+                        <th>Year</th>
+                        <th>Location</th>
+                        <th>Date</th>
                     </tr>
                     
                 </thead> 
@@ -100,19 +91,11 @@ include ('includes/functions/config.php');
                     <tr>
                      <form action="" method="post" role="form">  
                     <td><?= $row['id'];?></td>
-                    <td><?= $row['email'];?></td>
-                    <td><?= $row['firstName'];?></td>
-                    <td><?= $row['lastName'];?></td>
+                    <td><?= $row['name'];?></td>
                     <td><?= $row['username'];?></td>
-                    <td><?= $row['validationCode'];?></td>
-                    <td><?= $row['activeUser'];?></td>
-                    <td><?= $row['profileImage'];?></td>
-                    <td>
-                        <input type="checkbox" name="keyToDelete" value="<?php echo $row['id']; ?> required">
-                    </td>
-                    <td>
-                        <input type="submit" name="submitDeleteBtn" class="btn">
-                    </td>
+                    <td><?= $row['year'];?></td>
+                    <td><?= $row['location'];?></td>
+                    <td><?= $row['add_date'];?></td>
                     </form> 
                     </tr>
                     <?php }?>
@@ -133,7 +116,7 @@ include ('includes/functions/config.php');
         serverResponse.innerHTML=this.responseText;
     }
 
-    xhr.open("POST","ajax-users.php");
+    xhr.open("POST","ajax-favorites.php");
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("name="+input)
     }

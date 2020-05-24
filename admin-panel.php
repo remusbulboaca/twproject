@@ -38,9 +38,9 @@ require_once ('includes/functions/config.php');
                         </div>
                     <h2>Products</h2>
                         <div class="products">
-                            <a href="">View products</a>
-                            <a href="">View favorites</a>
-                            <a href="">Pending</a>
+                        <a href="admin-view-products.php">View products</a>
+                            <a href="admin-view-favorite.php">View favorites</a>
+                            <a href="admin-pending-products.php">Pending</a>
                         </div>
                     <h2>Database</h2>
                         <div class="db">
