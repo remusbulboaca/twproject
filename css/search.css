@@ -1,0 +1,394 @@
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'adelle_rgregular';
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+    margin:0;
+    background:white;
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    margin:0em;
+    background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding:0em;
+    height: 35%;
+    width: 100%;
+}
+
+html{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}
+
+header .topheader{
+    margin:0em;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.bottomheader{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding:2em;
+    width: 85%;
+    position: center;
+}
+
+header .logoclass{
+    flex-grow:0.8;
+    text-decoration: none;
+    color:#ffffff;
+    font-family: 'proxima_nova_rgbold';
+    font-size:30px;
+    font-weight: bolder;
+    padding-left:1em;
+}
+
+header .button1{
+    text-decoration: none;
+    padding: 0.3em 1.2em;
+    color: #191919;
+    background-color: white;
+    font-family: 'proxima_nova_rgbold';
+    text-align: center;
+    font-size: 0.7em;
+    border-radius: 2em;
+    padding: 1em 3em;
+}
+
+header .profile{
+    width: 2.5em;
+}
+
+
+
+h4,h5{
+    font-family: 'proxima_nova_rgbold' ;
+}
+
+a{
+    font-family: 'proxima_nova_rgregular';
+}
+
+.searchInput{
+    width: 100%;
+}
+
+.searchOpt{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#name{
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    height: 30px;
+}
+#alcool{
+    background-color: white;
+    border-radius: 10px;
+    height: 20px;
+    text-align: center;
+}
+
+#year{
+    text-align: center;
+    border-radius: 10px;
+    height: 15px;
+}
+#location{
+    text-align: center;
+    border-radius: 10px;
+    height: 15px;
+}
+#submit{
+    background: grey;
+    width: 40%;
+    border-radius: 10px;
+    height: 30px;
+}
+.searchBtn{
+    text-align: center;
+    padding: 8px;
+}
+
+.cardList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 20%;
+    padding-left: 20%;
+    justify-content: start;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 250px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top:25px;
+}
+
+.card img{
+    width:200px;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+  
+.card button:hover {
+    opacity: 0.7;
+}
+
+.content{
+    display:flex;
+    flex-direction: column;
+    height: inherit;
+    padding:10px;
+}
+
+.footer{
+    position: fixed;
+    margin-top: 50px;
+    bottom: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 15%;
+}
+
+.footer>a{
+    font-family: 'proxima_nova_rgbold';
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+@media only screen and (max-width: 455px){
+    html{
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+    }
+    header{
+        margin:0em;
+        background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding:0em;
+        height: 30%;
+        width: 100%;
+    }
+    .searchInput{
+        width: 100%;
+    }
+
+    .searchOpt{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #name{
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+        height: 30px;
+    }
+    #alcool{
+        background-color: white;
+        border-radius: 10px;
+        height: 20px;
+        text-align: center;
+    }
+
+    #year{
+        text-align: center;
+        border-radius: 10px;
+        height: 15px;
+    }
+    #location{
+        text-align: center;
+        border-radius: 10px;
+        height: 15px;
+    }
+    #submit{
+        background: grey;
+        width: 40%;
+        border-radius: 10px;
+        height: 30px;
+    }
+    .searchBtn{
+        text-align: center;
+        padding: 8px;
+    }
+
+
+    .cardList{
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(1,auto);
+        margin-bottom: 50px;
+        margin-left: 22px;
+    }
+
+    .card{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 200px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        margin-top:25px;
+    }
+
+    .card img{
+        width:200px;
+
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+      
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+    .content{
+        display:flex;
+        flex-direction: column;
+        height: inherit;
+        padding:10px;
+    }
+
+    .footer{
+        position: fixed;
+        margin-top: 50px;
+        bottom: 0;
+        display:flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-left: 15%;
+    }
+
+    .footer>a{
+        font-family: 'proxima_nova_rgbold';
+        text-decoration: none;
+        padding-right: 15px;
+    }
+
+    header .topheader{
+        margin:0em;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        
+    }
+
+    .bottomheader{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding:2em;
+        width: 85%;
+        position: center;
+    }
+
+    header .logoclass{
+        flex-grow:0.8;
+        text-decoration: none;
+        color:#ffffff;
+        font-family: 'proxima_nova_rgbold';
+        font-size:30px;
+        font-weight: bolder;
+        padding-left:1em;
+    }
+
+    header .button1{
+        text-decoration: none;
+        padding: 0.3em 1.2em;
+        color: #191919;
+        background-color: white;
+        font-family: 'proxima_nova_rgbold';
+        text-align: center;
+        font-size: 0.7em;
+        border-radius: 2em;
+        padding: 1em 3em;
+    }
+
+    header .profile{
+        width: 2.5em;
+    }
+    
+    
+
+}
