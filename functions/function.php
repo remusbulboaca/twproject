@@ -1172,4 +1172,65 @@ function redirect_search(){
         redirect($url);
     }
 }
+
+//Stats
+function get_nr_user(){
+    $sql = "Select count(*) from users";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['count(*)'];
+}
+else{
+    return false;
+}
+}
+
+function get_nr_caps(){
+    $sql = "Select count(*) from caps";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['count(*)'];
+}
+else{
+    return false;
+}
+}
+
+function get_top_user(){
+    $sql = "select u.username, COUNT(*) 'term_count' from users u join caps c on c.id_user=u.id GROUP BY u.username ORDER BY term_count DESC, u.username";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['username'];
+}
+else{
+    return false;
+}
+}
+
+function get_last_user(){
+    $sql = "Select username from users order by id desc";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['username'];
+}
+else{
+    return false;
+}
+}
+
+function get_last_caps(){
+    $sql = "Select name from caps order by id desc";
+    $result = query($sql);
+confirm($result);
+if($row=fetch_data($result)){
+    return $row['name'];
+}
+else{
+    return false;
+}
+}
 ?>
