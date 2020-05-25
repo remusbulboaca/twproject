@@ -1,0 +1,167 @@
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'adelle_rgregular';
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+    margin: 0;
+    background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
+    background-repeat: no-repeat;
+    height:100vh;
+    width:100%;
+}
+header{
+    margin: 0em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0em;
+    height: 10%;
+    width: 100%;
+}
+header .topheader{
+    margin:0em;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+header .logoclass
+{
+    flex-grow: 0.8;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "proxima_nova_rgbold";
+    font-size: 20px;
+    font-weight:bolder ;
+    padding-left: 1em;
+}
+
+header .profile
+{
+       width: 2em;
+}
+
+.content{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info{
+    position: relative;
+    padding-top: 15%;  
+    padding-right: 10%; 
+    font-family: 'proxima_nova_rgbold';
+    font-size:large;
+}
+
+.main{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+input[type=text],select{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding:12px 20px;
+    margin:8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius:10px;
+}
+
+input[type=file]{
+    display:flex;
+    flex-direction:column;
+    padding:12px 20px;
+    margin:8px 0;
+    display: none;
+}
+
+label[for=img]{
+    color:white;
+    height: 35px;
+    width: 100%;
+    background-color: #292929 ;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding:15px 25px;
+    margin:5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]{
+    width:100%;
+    background-color: lightslategray;
+    color:white;
+    padding:12px 20px;
+    margin:8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+label{
+    color:white;
+}
+
+.title h1{
+    color:white;
+}
+
+.info h3{
+    color:white;
+}
+
+@media only screen and (max-width: 725px) {
+    .info{
+        display:none;
+    }
+
+    .content{
+        align-items: center;
+        width: 100%;
+    }
+    .main{
+        width: 100%;
+        padding-left: 0%;
+        padding-right: 0%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
