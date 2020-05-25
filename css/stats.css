@@ -1,0 +1,457 @@
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'adelle_rgregular';
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {font-family: "Gobold"; src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot"); src: url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.woff") format("woff"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/480ddcdbf6e34bde73dfaed605fafcb3.svg#Gobold") format("svg"); }
+@font-face {font-family: "Gobold Hollow"; src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot"); src: url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.woff") format("woff"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0aea46344363939fffde7e35f398e915.svg#Gobold Hollow") format("svg"); }
+body{
+    margin: 0;
+    background:linear-gradient(60deg, #191919, #191919 60%, #272727 60%, #272722);
+    background-repeat: no-repeat;
+    height:100vh;
+    width:100vw;
+   
+}
+
+
+header{
+    margin: 0em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+}
+
+header .logoclass
+{
+    flex-grow: 0.8;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "proxima_nova_rgbold";
+    font-size: 30px;
+    font-weight:bolder ;
+    padding-left: 1em;
+}
+ header .button1{
+     text-decoration: none;
+     padding:0.3em 1.2em;
+     color: #191919;
+     background-color: white;
+     font-family: "proxima_nova_rgbold";
+     text-align: center;
+     font-size: 0.7em;
+     border-radius: 2em;
+     padding: 1em 3em;
+     transition: all 0.3s ease 0s;
+    }
+
+
+    header .button1:hover {
+        color: #494949 !important;
+        border-radius: 6px;
+        letter-spacing: 5px;
+        border-color: #494949 !important;
+        transition: all 0.3s ease 0s;
+            }
+
+.profile
+{
+    cursor: pointer; /* "hand" cursor */
+    width: 2.5em;
+    transition: all 0.3s ease 0s;
+}
+
+.profile:hover
+{
+    width: 2.7em;
+    transition: all 0.3s ease 0s;
+}
+    
+.subtitle{
+    position: absolute;
+        top: 15vh;
+}
+
+.subtitle h1{
+    position: relative;
+    color: white;
+    font-family: "Gobold";
+    font-size: 2em;
+   
+}
+
+.subtitle h2{
+    position: relative;
+    color: white;
+    font-family: "Gobold";
+    font-size: 1em;
+   
+}
+
+
+
+
+.wrap
+{
+     width: 80%;
+     
+  
+}
+
+.stats{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 2em;
+}
+
+
+.bottom{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family:"proxima_nova_rgregular" ;
+    bottom: 0em;
+    margin-left: 1.5em;
+}
+
+.bottom h2{
+    position: relative;
+    color: white;
+    font-family: "Gobold";
+    font-size: 0.8em;
+   
+}
+
+
+
+.bottom a{
+    font-family:"proxima_nova_rgregular" ;
+    padding: 2em;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease 0s;
+}
+
+.bottom a:hover{
+    color: #c4c4c4;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease 0s;
+}
+
+
+.totalUsers{
+    width: 0.1vw;
+    height: 16vh;
+    background-image: linear-gradient(to right top, #a43fda, #00a4ff, #12d8eb);
+    padding: 0.2em 8em 0.2em 1em;
+    border-radius: 15px;
+    margin: 2em auto;
+    
+}
+
+.totalUsers h3{
+    font-family: 'ProximaBold';
+    font-size: 1em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.totalUsers h2{
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+
+.totalProducts{
+    width: 0.1vw;
+    height: 16vh;
+    background: linear-gradient(90deg, rgba(231,199,27,1) 0%, rgba(255,139,0,1) 100%);
+    padding: 0.2em 8em 0.2em 1em;
+    border-radius: 15px;
+    margin: 2em auto;
+    
+}
+
+.totalProducts h3{ 
+    font-family: 'ProximaBold';
+    font-size: 1em;
+    color: white;
+    letter-spacing: 2px;
+    
+    
+
+}
+
+.totalProducts h2{
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.TopUser{
+    width: 0.1vw;
+    height: 16vh;
+    background: linear-gradient(90deg, rgb(160, 95, 11) 0%, rgb(255, 140, 0) 100%);
+    padding: 0.2em 8em 0.2em 1em;
+    border-radius: 15px;
+    margin: 2em auto;
+}
+
+.TopUser h3{
+    font-family: 'ProximaBold';
+    font-size: 1em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.TopUser h2{
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.LastUser{
+    width: 0.1vw;
+    height: 16vh;
+    background: linear-gradient(90deg, rgb(36, 189, 16) 0%, rgb(24, 204, 0) 100%);
+    padding: 0.2em 8em 0.2em 1em;
+    border-radius: 15px;
+    margin: 2em auto;
+}
+
+.LastUser h3{
+    font-family: 'ProximaBold';
+    font-size: 1em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.LastUser h2{
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.LastCaps{
+    width: 0.1vw;
+    height: 16vh;
+    background: linear-gradient(90deg, rgba(71,191,99,1) 0%, rgba(170,239,41,1) 100%);
+    padding: 0.2em 8em 0.2em 1em;
+    border-radius: 15px;
+    margin: 2em auto;
+}
+
+.LastCaps h3{
+    font-family: 'ProximaBold';
+    font-size: 1em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.LastCaps h2{
+    font-family: 'ProximaBold';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+@media (min-width: 1035px){
+    .subtitle{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        width: 95vw;
+    }
+
+    header
+    {
+        padding: 4em;
+    }
+
+
+
+
+
+    .subtitle h1{
+        
+        font-size: 2em;
+        padding-left: 2em;
+        margin: 0em;
+        padding-right: 0em;
+    }
+    
+    .wrap{
+        margin-right: 3em;
+    }
+
+
+    .bottom{
+        margin-left: 8em;
+    }
+}
+
+
+
+
+
+@media (min-width: 1505px){
+
+    .subtitle{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        width: 95vw;
+    }
+
+    header
+    {
+        padding: 4em;
+    }
+
+
+
+
+    .subtitle h1{
+        
+        font-size: 6em;
+        padding-left: 2em;
+        margin: 0em;
+        padding-right: 0em;
+    }
+    
+    .wrap{
+        margin-right: 10em;
+    }
+
+
+
+    .searchTerm{
+        height: 30px;
+        font-size: 1em;
+
+    }
+
+    .searchButton{
+    width: 4em;
+    height: 64px;
+    font-size: 30px;
+    
+    }
+
+
+    .bottom{
+        margin-left: 8em;
+    }
+}
+
+
+
+
+@media (min-width: 2450px){
+
+    .subtitle{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 10%;
+        width: 95vw;
+    }
+
+    header
+    {
+        padding: 4em;
+    }
+
+
+
+
+    .subtitle h1{
+        
+        font-size: 7em;
+        padding-left: 2em;
+        margin: 0em;
+        padding-right: 1em;
+    }
+    
+    .wrap{
+        margin-right: 10em;
+    }
+
+
+    .searchTerm{
+        height: 30px;
+        font-size: 1em;
+
+    }
+
+    .searchButton{
+    width: 4em;
+    height: 64px;
+    font-size: 30px;
+    
+    }
+
+
+    .bottom{
+        margin-left: 8em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
