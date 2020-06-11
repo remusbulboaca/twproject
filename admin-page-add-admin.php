@@ -64,8 +64,7 @@ include ('includes/functions/config.php');
                         </div>
                     <h2>Database</h2>
                         <div class="db">
-                            <a href="">Export database</a>
-                            <a href="">Import database</a>
+                            <a href="admin-export.php">Import/Export DB</a>
                         </div>
                 </div>
         </div>
