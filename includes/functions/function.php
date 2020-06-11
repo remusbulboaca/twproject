@@ -1403,4 +1403,52 @@ else{
 }
 }
 
+function admin_add_user(){
+    if ($_SERVER['REQUEST_METHOD']=='POST'){
+
+        $raw_firstName=cleanstring($_POST['fname']);
+        $raw_lastName=cleanstring($_POST['lname']);
+        $raw_userName=cleanstring($_POST['username']);
+        $raw_email=cleanstring($_POST['email']);
+        $raw_password=cleanstring($_POST['password']);
+
+
+        $Errors=[];
+        
+
+        if(strlen($raw_userName)>15){
+            $Errors[]="Username too long ";
+        }
+
+        if(email_validation($raw_email)){
+            $Errors[]="Email already exist ";
+        }
+
+        if(username_validation($raw_userName)){
+            $Errors[]="Username already exist ";
+        }
+
+
+
+        if(!empty($Errors)){
+                foreach($Errors as $Errors){
+                    echo $Errors;
+                }
+            }
+          else{
+            $Fname=escape($raw_firstName);
+            $Lname=escape($raw_lastName);
+            $Email=escape($raw_email);
+            $Username=escape($raw_userName);
+            $Pass=escape($raw_password);
+            $Password=md5($Pass);
+            $validationCode=md5($Username);
+            $sql = "insert into users(firstName,lastName,email,username,password,activeUser,validationCode,profileImage)  values ('$Fname','$Lname','$Email','$Username','$Password','1','$validationCode','Ellipse_2.png')";
+            $result =query($sql);
+            confirm($result);
+            redirect("admin-page-add-user.php");          
+          }  
+    }
+}
+
 ?>
