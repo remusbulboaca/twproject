@@ -201,7 +201,43 @@
                         <!-- review? -->
                         <h2>Admin Panel</h2>
 
-                        <p></p>
+                        <p>Admin panelul este folosit pentru a controla useri si produsele de pe site. Pentru accesul la acest panou de comanda este necesar un cont de administrator. 
+                          Admin Panelul are 4 sectiuni: dashboardul, useri,produse si baza de date.
+                        </p>
+                        <section id="Dashboard">
+                          <h2>Dashboard</h2>
+                          <p>In Dashboard sunt statistici referitoare la numarul de useri inregistrati, numarul de produse totale si cate produse au fost adaugate astazi</p>
+
+                        </section>
+                        <section id="Members"> 
+                          <h2>Members</h2>
+                          <p>Categoria de membri este impartita si ea la randul ei in 4 subcategorii: Useri, Admini, Adaugarea unui user fara a mai fi necesara trimiterea unui mail si adaugarea unor useri normali privilegiile de admin.
+                            Pentru fiecare subsectiune, administratorii au acces la toata baza de date cu userii. Am implementat o functie de search folosind XMLHttpRequest pentru a fi in timp real iar de asemenea tabela este pagina in orice moment folosind un script scris in Javascript.
+                          </p>
+                          <p>Panoul de add admin este accesibil pentru toata lumea dar se poate folosi doar de catre un utilizator cu atributia de GM. Acelasi lucru este valabil si la functia de desetare a unui admin de la privilegii</p>
+                        </section>
+                        <section id="Products">
+                          <h2>Products</h2>
+                          <p>
+                            Valabil si ca la panorile de membri, aceasta este structurata in 3 parti: vizualizarea listei de produse, listei de favorite dar si listei de produse in asteptare. Toate tabelele sunt paginate si au implementata functia de search folosind Ajax.
+                          </p>
+                        </section>
+                        <section id="Database">
+                          <h2>Database</h2> 
+                              <p>
+                                La sectiunea Database putem importa sau exporta in format CSV
+                              </p>
+                        </section>
+                        </section>
+                        <section id="Resources">
+                          <h2>Resources</h2>
+                          <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/">https://profs.info.uaic.ro/~busaco/teach/courses/web/</a><p></p>
+                          <a href="https://www.w3schools.com/php/default.asp">https://www.w3schools.com/php/default.asp</a><p></p>
+                          <a href="https://elvery.net/demo/responsive-tables/"> https://elvery.net/demo/responsive-tables/</a><p></p>
+                          <a href="https://codepen.io/bastony/post/tablesortingtutorial-js">https://codepen.io/bastony/post/tablesortingtutorial-js</a><p></p>
+                          <a href="https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/">https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/</a><p></p>
+                          <a href="https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/">https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/</a><p></p>
+                          <a href="https://developers.google.com/maps/documentation/javascript/geocoding?hl=ro">https://developers.google.com/maps/documentation/javascript/geocoding?hl=ro</a><p></p>
                         </section>
 
   </body>
