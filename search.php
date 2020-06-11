@@ -1,7 +1,6 @@
 <?php
 include 'functionsproduct.php';
-ob_start();
-    session_start();
+
 
 function abcd(){
 if(isset($_POST['submit'])){
@@ -19,6 +18,9 @@ if(isset($_POST['submit'])){
     $location = $_POST['location'];
     $alcool = $_POST['alcool'];
 
+    if($name==null && $year == null && $location==null && $alcool=='none'){
+        echo "<h3>Please enter valid search criteria!</h3>";
+    }else{
     $fields = [];
     $queryParts = [];
     $parameters = [];
@@ -62,6 +64,11 @@ if(isset($_POST['submit'])){
     $stmt = $pdo->prepare($sql);
     if($stmt){
         $stmt->execute($parameters);
+        if($stmt->rowCount()==0){
+            echo "<div class='errormsg'>";
+                echo "<h3>There are no matching results based on your search</h3>";
+            echo "</div>";
+        }
         while($row = $stmt->fetch()){
             echo "<div class='card'>";
                 echo "<img src='product_images/".$row['image']."'"."style:100%>";
@@ -72,7 +79,8 @@ if(isset($_POST['submit'])){
             echo "</div>";
         }
     }
-}
+}}
+
 }
 
 ?>
@@ -92,7 +100,7 @@ if(isset($_POST['submit'])){
         <div class="topheader">
             <a href="" class="logoclass">COLR</a>
             <a href="addproduct.php" class="button1">Add Product</a>
-            <img src="images/<?php echo displayProfilePicture() ?>" alt="" class="profile" onclick="location.href='profile-personal-details.php'">
+            <img src="images/icons8-male-user-48.png" alt="" class="profile">
         </div>
 
         <div class="bottomheader">
