@@ -1,6 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
 <?php
 require_once('includes/functions/function.php') ;
-?>  
+?>
+<table id="table-data">  
 <thead>
                     <tr>
                     <th>id</th>
@@ -22,7 +33,7 @@ require_once('includes/functions/function.php') ;
 <?php
 foreach($_POST as $post_var){
     $searchKey=$post_var;
-    $sql = "select * from users where firstName like '%$searchKey%' and admin='0' ";
+    $sql = "select * from users where firstName like '$searchKey%' and admin='0' ";
     $result = query($sql);
     confirm($result);
     echo "<tbody>";
@@ -44,8 +55,14 @@ foreach($_POST as $post_var){
                     <td>
                         <input type="submit" name="submitDeleteBtn" class="btn">
                     </td>
+                    
         </tr>
-        <?php } echo "</tbody>";
+        
+        <?php } echo "</tbody> </table>";
 }
 
 ?>
+<script type="text/javascript" src="admin-page-users.js"></script>
+
+</body>
+</html>
