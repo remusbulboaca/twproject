@@ -39,7 +39,7 @@ include ('includes/functions/config.php');
                             <a href="admin-page-admins.php">Admins</a>
                             <?php } ?>
                             
-                            <a href="">Add user</a>
+                            <a href="admin-page-add-user.php">Add user</a>
                             <?php if(gm()==true){ ?>
                             <a href="admin-page-add-admin.php">Add admin</a>
                             <?php } ?>

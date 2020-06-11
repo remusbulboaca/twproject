@@ -12,10 +12,12 @@ include ('includes/functions/config.php');
     <head>
 </head>
 <style>
+
     
     .dash{
         cursor:pointer;
     }
+    
 </style>
 <body>
 <?php if(admin()==true){
@@ -70,67 +72,19 @@ include ('includes/functions/config.php');
         </div>
 
         <div class="right">
+        <div class="cool">
+        <form method="post" action="">
+        
+        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+        <input type="text" id="fname" name="fname" placeholder="First name" required><br><br>
+        <input type="text" id="lname" name="lname" placeholder="Last name" required><br><br>
+        <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+        <button class="button"> Create account</button>
+        <p style="color:red"> <?php admin_add_user() ?> </p>
+    </form>
             
-            <h1>add admin</h1>
-            <div class="search">
-            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search name">
-            </div>
-            <?php 
-            $sql = "select * from users where admin='0'";
-            $result = query($sql);
-            confirm($result);
-            ?>
-            
-            <div class="table-div">
-
-            <?php  
-            if(isset($_POST['submitAdd'])){
-                $id=$_POST['keyToAdd'];
-                add_account_ajax($id);
-            }
-            ?>  
-            <table id="table-data">
-            <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>email</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Validation Code</th>
-                        <th>activeUser</th>
-                        <th>Profile Image</th>
-                        <th>Select </th>
-                        <th>Add </th>
-                    </tr>
-                    
-                </thead> 
-                <tbody>
-                    <?php while($row=fetch_data($result)){
-                    ?>
-                    <tr>
-                     <form action="" method="post" role="form">  
-                    <td><?= $row['id'];?></td>
-                    <td><?= $row['email'];?></td>
-                    <td><?= $row['firstName'];?></td>
-                    <td><?= $row['lastName'];?></td>
-                    <td><?= $row['username'];?></td>
-                    <td><?= $row['validationCode'];?></td>
-                    <td><?= $row['activeUser'];?></td>
-                    <td><?= $row['profileImage'];?></td>
-                    <td>
-                        <input type="checkbox" name="keyToAdd" value="<?php echo $row['id']; ?> "required>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitAdd" class="btn">
-                    </td>
-                    </form> 
-                    </tr>
-                    <?php }?>
-                </tbody>  
-                
-            </table>
-            </div>
+        </div>
         </div>
     </div>
 </body>

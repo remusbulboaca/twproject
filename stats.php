@@ -22,7 +22,7 @@ require_once('includes/functions/function.php');
         var data = google.visualization.arrayToDataTable([
           ['', ''],
           ['Popular Caps',   <?php echo no_of_popular_caps() ?>],
-          ['No Popular Caps',      <?php echo get_nr_caps()-get_nr_user() ?>]
+          ['No Popular Caps',      <?php echo  abs(get_nr_caps() - no_of_popular_caps()) ?>]
           
         ]);
 
@@ -96,12 +96,6 @@ require_once('includes/functions/function.php');
     </div>
 
         </div>
-
-
-
-
-<div class="bottom">
-</div>
 
 </body>
 </html>
