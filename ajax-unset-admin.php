@@ -1,5 +1,6 @@
 <?php
 require_once('includes/functions/function.php') ;
+include ('includes/functions/config.php');
 ?>  
 <thead>
                     <tr>
@@ -24,7 +25,7 @@ require_once('includes/functions/function.php') ;
 <?php
 foreach($_POST as $post_var){
     $searchKey=$post_var;
-    $sql = "select * from users where firstName like '%$searchKey%' and admin='0' ";
+    $sql = "select * from users where firstName like '%$searchKey%' and admin='1' ";
     $result = query($sql);
     confirm($result);
     echo "<tbody>";
