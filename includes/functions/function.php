@@ -568,7 +568,7 @@ function unset_admin_ajax($id){
         
 
         echo'<p style=" color:green " class="deleteAlert">Account no longer admin </p>';
-        header("Refresh:1; url=admin-page-users.php");
+        header("Refresh:1; url=admin-page-admins.php");
     }
 }
 
@@ -601,7 +601,8 @@ function pending_add_ajax($id){
             $description=$row['description'];
             $history=$row['history'];
             $location=$row['location'];
-            $sql2 = "insert into caps(id_user,name,year,image,description,history,location) values('$id_user',' $name','$year','$image','$description','$history','$location')";
+            $alcool=$row['alcool'];
+            $sql2 = "insert into caps(id_user,name,year,image,description,history,location,alcool) values('$id_user',' $name','$year','$image','$description','$history','$location','$alcool')";
             $result2 = query($sql2);
             confirm($result2);
 

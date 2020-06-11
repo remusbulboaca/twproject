@@ -1,6 +1,8 @@
 <?php
 require_once('includes/functions/function.php') ;
 ?>  
+<form action="" method="post" role="form">  
+<table id="table-data"> 
 <thead>
                         <tr>
                         <th>id</th>
@@ -47,7 +49,7 @@ foreach($_POST as $post_var){
                         <input type="submit" name="submitDeleteBtn" class="btn">
                     </td>
         </tr>
-        <?php } echo "</tbody>";
+        <?php } echo "</tbody> </table> </form>";
 }
 
 ?>

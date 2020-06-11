@@ -41,37 +41,6 @@ include ('includes/functions/config.php');
             <div class="logo">
             <a href="">COLR <span>Admin panel</span></a>
             </div>
-            <div class="menu_mobile">
-            <div class="dash">
-                    <h2 onclick="location.href='admin-panel.php' ">Dashboard</h2></div>
-                <div class="dropdown">
-                <button onclick="myFunction2()" class="dropbtn"> Members</button>
-  <div id="myDropdown2" class="dropdown-content">
-                <a href="admin-page-users.php">Users</a>
-                <?php if(gm()==true){ ?>
-                            <a href="admin-page-admins.php">Admins</a>
-                            <?php } ?>
-                            
-                            <a href="">Add user</a>
-                            <?php if(gm()==true){ ?>
-                            <a href="admin-page-add-admin.php">Add admin</a>
-                            <?php } ?>
-                </div>
-                </div> 
-                
-                <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Products</button>
-  <div id="myDropdown" class="dropdown-content">
-  <a href="admin-view-products.php">View products</a>
-                            <a href="admin-view-favorite.php">View favorites</a>
-                            <a href="admin-pending-products.php">Pending</a>
-  </div>
-</div>
-
-                <h2>Database</h2>
-                
-                </div>
-
                 <div class="menu">
                     <div class="dash">
                     <h2 onclick="location.href='admin-panel.php' ">Dashboard</h2> </div>
@@ -108,7 +77,7 @@ include ('includes/functions/config.php');
             <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search name">
             </div>
             <?php 
-            $sql = "select * from users where admin='0'";
+            $sql = "select * from users where admin='0' ";
             $result = query($sql);
             confirm($result);
             ?>
@@ -121,6 +90,7 @@ include ('includes/functions/config.php');
                 add_account_ajax($id);
             }
             ?>  
+             <form action="" method="post" role="form">  
             <table id="table-data">
             <thead>
                     <tr>
@@ -141,7 +111,7 @@ include ('includes/functions/config.php');
                     <?php while($row=fetch_data($result)){
                     ?>
                     <tr>
-                     <form action="" method="post" role="form">  
+                    
                     <td><?= $row['id'];?></td>
                     <td><?= $row['email'];?></td>
                     <td><?= $row['firstName'];?></td>
@@ -151,17 +121,18 @@ include ('includes/functions/config.php');
                     <td><?= $row['activeUser'];?></td>
                     <td><?= $row['profileImage'];?></td>
                     <td>
-                        <input type="checkbox" name="keyToAdd" value="<?php echo $row['id']; ?> "required>
+                        <input type="checkbox" name="keyToAdd" value="<?php echo $row['id']; ?> ">
                     </td>
                     <td>
                         <input type="submit" name="submitAdd" class="btn">
                     </td>
-                    </form> 
+                    
                     </tr>
                     <?php }?>
                 </tbody>  
                 
             </table>
+            </form> 
             <div id='buttons' class="buttons"></div>
             </div>
             </div>
@@ -174,18 +145,16 @@ include ('includes/functions/config.php');
     function getInput(input) {
     const xhr=new XMLHttpRequest();
     xhr.onload=function(){
-        const serverResponse=document.getElementById("table-data");
-            serverResponse.innerHTML=this.responseText;
+        serverResponse.innerHTML=this.responseText;
             document.getElementById("buttons").innerHTML = "";
             pagination(document.getElementById("table-data").rows.length);
+           
     }
 
     xhr.open("POST","ajax-add-admins.php");
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("name="+input)
     }
-
-
 
 
     function pagination($rowCount1){

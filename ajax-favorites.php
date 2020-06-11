@@ -1,6 +1,8 @@
 <?php
 require_once('includes/functions/function.php') ;
 ?>  
+<form action="" method="post" role="form">  
+<table id="table-data"> 
 <thead>
 <tr>
                         <th>id Product</th>
@@ -33,7 +35,7 @@ foreach($_POST as $post_var){
                     <td><?= $row['location'];?></td>
                     <td><?= $row['add_date'];?></td>
         </tr>
-        <?php } echo "</tbody>";
+        <?php } echo "</tbody> </table> </form>";
 }
 
 ?>

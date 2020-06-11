@@ -102,7 +102,7 @@ include ('includes/functions/config.php');
             ?>
             
             <div class="table-div">
-            
+            <form action="" method="post" role="form">    
             <table id="table-data">
             <thead>
                     <tr>
@@ -119,19 +119,21 @@ include ('includes/functions/config.php');
                     <?php while($row=fetch_data($result)){
                     ?>
                     <tr>
-                     <form action="" method="post" role="form">  
+                    
                     <td><?= $row['id'];?></td>
                     <td><?= $row['name'];?></td>
                     <td><?= $row['username'];?></td>
                     <td><?= $row['year'];?></td>
                     <td><?= $row['location'];?></td>
                     <td><?= $row['add_date'];?></td>
-                    </form> 
+                     
                     </tr>
                     <?php }?>
                 </tbody>  
                 
             </table>
+                    </form>  
+            <div id='buttons' class="buttons"></div>
             </div>
         </div>
     </div>

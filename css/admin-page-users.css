@@ -53,14 +53,7 @@
   padding: 0.7em;
 }
 
-td input[type="submit"] {
-  border: none;
-  font-family: 'proxima_nova_rgregular';
-  text-decoration: none;
-  color: white;
-  padding: 5px 10px;
-  background-color: rgb(216, 73, 73);
-}
+
 
 body{
   margin: 0;

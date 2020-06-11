@@ -114,10 +114,11 @@ include ('includes/functions/config.php');
             }
 
             ?>  
+             <form action="" method="post" role="form">    
             <table id="table-data">
             <thead>
                     <tr>
-                        <th>id</th>
+                    <th>id</th>
                         <th>id_user</th>
                         <th>Name</th>
                         <th>Year</th>
@@ -126,6 +127,7 @@ include ('includes/functions/config.php');
                         <th>History</th>
                         <th>Location</th>
                         <th>Date</th>
+                        <th>Alcool</th>
                         <th>Select </th>
                         <th>Delete </th>
                         <th>Accept </th>
@@ -136,7 +138,7 @@ include ('includes/functions/config.php');
                     <?php while($row=fetch_data($result)){
                     ?>
                     <tr>
-                     <form action="" method="post" role="form">  
+                     
                     <td><?= $row['id'];?></td>
                     <td><?= $row['id_user'];?></td>
                     <td><?= $row['name'];?></td>
@@ -146,6 +148,7 @@ include ('includes/functions/config.php');
                     <td><?= $row['history'];?></td>
                     <td><?= $row['location'];?></td>
                     <td><?= $row['add_date'];?></td>
+                    <td><?= $row['alcool'];?></td>
                     <td>
                         <input type="checkbox" name="key" value="<?php echo $row['id']; ?>" required>
                     </td>
@@ -155,12 +158,13 @@ include ('includes/functions/config.php');
                     <td>
                         <input type="submit" name="submitAcceptBtn" class="btn" value="Accept">
                     </td>
-                    </form> 
+                    
                     </tr>
                     <?php }?>
                 </tbody>  
                 
             </table>
+                </form>
             <div id='buttons' class="buttons"></div>
             </div>
         </div>

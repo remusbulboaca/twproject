@@ -1,7 +1,9 @@
 <?php
 require_once('includes/functions/function.php') ;
 include ('includes/functions/config.php');
-?>  
+?>
+<form action="" method="post" role="form">  
+<table id="table-data">   
 <thead>
                     <tr>
                     <th>id</th>
@@ -43,14 +45,14 @@ foreach($_POST as $post_var){
             <td><?= $row['profileImage'];?></td>
             <?php  if(gm()==true){ ?>
                     <td>
-                    <input type="checkbox" name="keyToDelete" value="<?php echo $row['id']; ?>" required>
+                    <input type="checkbox" name="keyToDelete" value="<?php echo $row['id']; ?>" >
                     </td>
                     <td>
                         <input type="submit" name="submitDeleteBtn" class="btn">
                     </td>
                     <?php } ?>
         </tr>
-        <?php } echo "</tbody>";
+        <?php } echo "</tbody> </table> </form>";
 }
 
 ?>

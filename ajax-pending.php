@@ -1,6 +1,8 @@
 <?php
 require_once('includes/functions/function.php') ;
 ?>  
+<form action="" method="post" role="form">  
+<table id="table-data"> 
 <thead>
 <tr>
                         <th>id</th>
@@ -12,6 +14,7 @@ require_once('includes/functions/function.php') ;
                         <th>History</th>
                         <th>Location</th>
                         <th>Date</th>
+                        <th>Alcool</th>
                         <th>Select </th>
                         <th>Delete </th>
                         <th>Accept </th>
@@ -41,6 +44,7 @@ foreach($_POST as $post_var){
                     <td><?= $row['history'];?></td>
                     <td><?= $row['location'];?></td>
                     <td><?= $row['add_date'];?></td>
+                    <td><?= $row['alcool'];?></td>
                     <td>
                         <input type="checkbox" name="key" value="<?php echo $row['id']; ?> required">
                     </td>
@@ -51,7 +55,7 @@ foreach($_POST as $post_var){
                         <input type="submit" name="submitAcceptBtn" class="btn" value="Accept">
                     </td>
         </tr>
-        <?php } echo "</tbody>";
+        <?php } echo "</tbody> </table> </form>";
 }
 
 ?>

@@ -18,6 +18,7 @@ include ('includes/functions/config.php');
     }
 </style>
 <body>
+
 <?php if(admin()==true){
                        
                     }
@@ -78,7 +79,7 @@ include ('includes/functions/config.php');
                         </div>
                     <h2>Products</h2>
                         <div class="products">
-                            <a href="admin-view-products.php">View products</a>
+                        <a href="admin-view-products.php">View products</a>
                             <a href="admin-view-favorite.php">View favorites</a>
                             <a href="admin-pending-products.php">Pending</a>
                         </div>
@@ -92,12 +93,16 @@ include ('includes/functions/config.php');
 
         <div class="right">
             
-            <h1>products</h1>
+            <h1>users</h1>
             <div class="search">
-            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search by id">
+            <input type="text" name="search" id="EchoInput" onblur="getInput(this.value)" placeholder="Search name">
             </div>
-            <?php 
-            $sql = "select * from caps";
+           
+            
+                  
+            <?php
+             
+            $sql = "select * from users where admin='0'";
             $result = query($sql);
             confirm($result);
             ?>
@@ -106,22 +111,20 @@ include ('includes/functions/config.php');
             <?php  
             if(isset($_POST['submitDeleteBtn'])){
                 $id=$_POST['keyToDelete'];
-                delete_product_ajax($id);
+                delete_account_ajax($id);
             }
             ?>  
-             <form action="" method="post" role="form">    
             <table id="table-data">
             <thead>
                     <tr>
                         <th>id</th>
-                        <th>id_user</th>
-                        <th>Name</th>
-                        <th>Year</th>
-                        <th>Image</th>
-                        <th>Description</th>
-                        <th>History</th>
-                        <th>Location</th>
-                        <th>Date</th>
+                        <th>email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Validation Code</th>
+                        <th>activeUser</th>
+                        <th>Profile Image</th>
                         <th>Select </th>
                         <th>Delete </th>
                     </tr>
@@ -131,31 +134,30 @@ include ('includes/functions/config.php');
                     <?php while($row=fetch_data($result)){
                     ?>
                     <tr>
-                   
+                     <form action="" method="post" role="form">  
                     <td><?= $row['id'];?></td>
-                    <td><?= $row['id_user'];?></td>
-                    <td><?= $row['name'];?></td>
-                    <td><?= $row['year'];?></td>
-                    <td><?= $row['image'];?></td>
-                    <td><?= $row['description'];?></td>
-                    <td><?= $row['history'];?></td>
-                    <td><?= $row['location'];?></td>
-                    <td><?= $row['add_date'];?></td>
+                    <td><?= $row['email'];?></td>
+                    <td><?= $row['firstName'];?></td>
+                    <td><?= $row['lastName'];?></td>
+                    <td><?= $row['username'];?></td>
+                    <td><?= $row['validationCode'];?></td>
+                    <td><?= $row['activeUser'];?></td>
+                    <td><?= $row['profileImage'];?></td>
                     <td>
                         <input type="checkbox" name="keyToDelete" value="<?php echo $row['id']; ?> required">
                     </td>
                     <td>
-                        <input type="submit" name="submitDeleteBtn" class="btn">
+                        <input type="submit" name="submitDeleteBtn" id="submitDeleteBtn" class="btn">
                     </td>
-                   
+                    </form> 
                     </tr>
                     <?php }?>
                 </tbody>  
                 
             </table>
-                    </form>
             <div id='buttons' class="buttons"></div>
             </div>
+            
         </div>
     </div>
 </body>
@@ -163,20 +165,25 @@ include ('includes/functions/config.php');
 
 <script type="text/javascript">
     function getInput(input) {
-    const xhr=new XMLHttpRequest();
-    xhr.onload=function(){
-        serverResponse.innerHTML=this.responseText;
+        const xhr=new XMLHttpRequest();
+        xhr.onload=function(){
+            
+            const serverResponse=document.getElementById("table-data");
+            serverResponse.innerHTML=this.responseText;
             document.getElementById("buttons").innerHTML = "";
             pagination(document.getElementById("table-data").rows.length);
-    }
+        }
 
-    xhr.open("POST","ajax-products.php");
+    xhr.open("POST","ajax-users.php");
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("name="+input)
+    
     }
 
 
-    function pagination($rowCount1){
+
+
+function pagination($rowCount1){
     document.getElementById("buttons").innerHTML = "";
 // get the table element
 var $table = document.getElementById("table-data"),
@@ -187,7 +194,7 @@ $rowCount = $rowCount1,
 // get the first cell's tag name (in the first row)
 $firstRow = $table.rows[0].firstElementChild.tagName,
 // boolean var to check if table has a head row
-$hasHead = ($firstRow === "TH"),
+$hasHead = ($firstRow === "th"),
 // an array to hold each row
 $tr = [],
 // loop counters, to start count from rows[1] (2nd row) if the first row has a head tag
@@ -252,5 +259,7 @@ function pageButtons($pCount,$cur) {
 <script type="text/javascript" src="admin-page-users.js"></script>
 <!--DROPDOWN-->
 <script type="text/javascript" src="js/dropdown.js"></script>
-<script type="text/javascript"> getInput(""); </script>
+
+
+
 </html>

@@ -113,7 +113,8 @@ include ('includes/functions/config.php');
                 $id=$_POST['keyToDelete'];
                 delete_account_ajax($id);
             }
-            ?>  
+            ?>
+            <form action="" method="post" role="form">    
             <table id="table-data">
             <thead>
                     <tr>
@@ -134,7 +135,7 @@ include ('includes/functions/config.php');
                     <?php while($row=fetch_data($result)){
                     ?>
                     <tr>
-                     <form action="" method="post" role="form">  
+                     
                     <td><?= $row['id'];?></td>
                     <td><?= $row['email'];?></td>
                     <td><?= $row['firstName'];?></td>
@@ -149,12 +150,13 @@ include ('includes/functions/config.php');
                     <td>
                         <input type="submit" name="submitDeleteBtn" class="btn">
                     </td>
-                    </form> 
+                    
                     </tr>
                     <?php }?>
                 </tbody>  
                 
             </table>
+            </form>
             <div id='buttons' class="buttons"></div>
             </div>
             

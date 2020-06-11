@@ -1,6 +1,8 @@
 <?php
 require_once('includes/functions/function.php') ;
-?>  
+?> 
+<form action="" method="post" role="form">  
+<table id="table-data"> 
 <thead>
                     <tr>
                     <th>id</th>
@@ -39,13 +41,13 @@ foreach($_POST as $post_var){
             <td><?= $row['activeUser'];?></td>
             <td><?= $row['profileImage'];?></td>
             <td>
-            <input type="checkbox" name="keyToAdd" value="<?php echo $row['id']; ?> "required>
+            <input type="checkbox" name="keyToAdd" value="<?php echo $row['id']; ?> ">
                     </td>
                     <td>
                         <input type="submit" name="submitAdd" class="btn">
                     </td>
         </tr>
-        <?php } echo "</tbody>";
+        <?php } echo "</tbody> </table> </form>";
 }
 
 ?>

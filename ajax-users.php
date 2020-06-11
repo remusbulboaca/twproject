@@ -11,6 +11,7 @@
 <?php
 require_once('includes/functions/function.php') ;
 ?>
+ <form action="" method="post" role="form">  
 <table id="table-data">  
 <thead>
                     <tr>
@@ -58,7 +59,7 @@ foreach($_POST as $post_var){
                     
         </tr>
         
-        <?php } echo "</tbody> </table>";
+        <?php } echo "</tbody> </table> </form>";
 }
 
 ?>
