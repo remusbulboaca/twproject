@@ -78,8 +78,7 @@ require_once ('includes/functions/config.php');
                         </div>
                     <h2>Database</h2>
                         <div class="db">
-                            <a href="">Export database</a>
-                            <a href="">Import database</a>
+                            <a href="admin-export.php">Export/Import database</a>
                         </div>
                 </div>
         </div>
@@ -104,3 +103,5 @@ require_once ('includes/functions/config.php');
 </body>
 <script type="text/javascript" src="js/dropdown.js"></script>
 </html>
+
+

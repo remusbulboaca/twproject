@@ -1,5 +1,6 @@
 <?php require_once('includes/functions/function.php') ;
 require_once ('includes/functions/config.php');
+require_once ('functionsproduct.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@ require_once ('includes/functions/config.php');
     <header>
             <a href="home.php" class="logoclass" >COLR</a>
             <a href="addproduct.php" class="button1" >ADD PRODUCT</a>
-            <img src=<?php echo "images/icons8-male-user-48.png" ?> alt="" class="profile" onclick="location.href='profile-personal-details.php'">
+            <img src="images/<?php echo displayProfilePicture() ?>" alt="" class="profile" onclick="location.href='profile-personal-details.php'">
             
     </header>
 
@@ -47,7 +48,7 @@ require_once ('includes/functions/config.php');
         </div>
 <div class="bottom">
     <a href="popular-caps.php" >Popular Caps</a>
-    <a href="popular-caps.php" >Statistics</a>
+    <a href="stats.php" >Statistics</a>
 </div>
 
 

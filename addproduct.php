@@ -21,7 +21,7 @@
         <header>
             <div class="topheader">
                 <a href="home.php" class="logoclass">COLR</a>
-                <img src="images/icons8-male-user-48.png" alt="" class="profile">
+                <img src="images/<?php echo displayProfilePicture()?>" alt="" class="profile" onclick="location.href='profile-personal-details.php'">
             </div>
         </header>
 
