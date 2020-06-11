@@ -41,6 +41,36 @@ include ('includes/functions/config.php');
             <div class="logo">
             <a href="">COLR <span>Admin panel</span></a>
             </div>
+            <div class="menu_mobile">
+            <div class="dash">
+                    <h2 onclick="location.href='admin-panel.php' ">Dashboard</h2></div>
+                <div class="dropdown">
+                <button onclick="myFunction2()" class="dropbtn"> Members</button>
+  <div id="myDropdown2" class="dropdown-content">
+                <a href="admin-page-users.php">Users</a>
+                <?php if(gm()==true){ ?>
+                            <a href="admin-page-admins.php">Admins</a>
+                            <?php } ?>
+                            
+                            <a href="">Add user</a>
+                            <?php if(gm()==true){ ?>
+                            <a href="admin-page-add-admin.php">Add admin</a>
+                            <?php } ?>
+                </div>
+                </div> 
+                
+                <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Products</button>
+  <div id="myDropdown" class="dropdown-content">
+  <a href="admin-view-products.php">View products</a>
+                            <a href="admin-view-favorite.php">View favorites</a>
+                            <a href="admin-pending-products.php">Pending</a>
+  </div>
+</div>
+
+                <h2>Database</h2>
+                
+                </div>
                 <div class="menu">
                     <div class="dash">
                     <h2 onclick="location.href='admin-panel.php' ">Dashboard</h2> </div>
