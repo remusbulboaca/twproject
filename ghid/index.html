@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ColR - Fine Web Collector</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>Ghid ColR - Fine Web Collector</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Bulboaca Remus Andrei
+        </dd>
+        <dd>Mija Andrei</dd>
+        <dd>Radeanu Dragos Nicolae</dd>
+        <dt>Github Repository</dt>
+        <dd>
+          <a href="https://github.com/remusbulboaca/twproject">ColR a fine web collector @ Github</a>
+        </dd>
+        <dt>Course website</dt>
+        <dd>
+          <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/index.html"> Tehnologii Web @ Facultatea de Informatica Iasi </a>
+        </dd>
+        <dt>Coordinating Teacher</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">Amariei Ciprian</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        ColR - Fine Web Collector se adreseaza colectionarilor de capace, dopuri si etichete specifice recipientelor folosite pentru inmagazinarea bauturilor (ne)alcoolice. Pe baza facilitatilor de cautare multi-criteriala implementate, utilizatorii autentificati vor putea crea, inventaria si partaja informatii privind artefactele detinute in functie de diverse caracteristici: atribute fizice, imagine, valoare, tara de provenienta, istoric al folosirii efective etc. Se va oferi suport pentru import/export de date. Se vor genera statistici diverse disponibile in formate deschise – minimal, CSV si DocBook. Se va realiza, de asemenea, un clasament al celor mai populare obiecte colectate, disponibil si ca flux de date RSS.
+      </p>
+    </section>
+
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introduction</h2>
+      <p>
+        La primul contact cu aplicatia o sa fiti intampinati de o prima pagina de prezentare, de aici nu puteti decat sa va logati sau sa va faceti un cont nou, apasand butonul din dreapta sus.
+       <img src="images/home.png" width="100%" position:center>
+      </p>
+      
+    </section>
+
+    <section id="register">
+      <!-- review? -->
+      <h2>Register</h2>
+      <p>
+        Folosind pagina "Register" puteti sa va creati un cont folosind email, nume, prenume, username, parola. Apasand butonul <b>Create Accound</b> contul dumneavoastra este creat si puteti sa va logati pe pagina de Sign In.
+        <img src="images/reg.png" width="100%">
+      </p>
+    </section>
+
+      <section id="login">
+        <!-- review? -->
+        <h2>LogIn</h2>
+        <p>Pe pagina de Login puteti sa va autentificati cu usernameul si parola folosinte la <b>Register</b> sau cu un cont <b>Google</b> totodata de aici puteti sa va recuperati parola.
+        <img src="images/log.png" width="100%">
+        </p>
+      </section>
+
+      <section id="profile">
+        <!-- review? -->
+        <h2>Profilul meu</h2>
+        <p>
+          Pe pagina profilului puteti vizualiza urmatoare:
+          <li>Detalii despre contul dumneavoastra</li>
+          <li>Colectia dumneavoastra</li>
+          <li>Obiecte favorite</li>
+          <img src="images/profile.png" width="100%">
+        </p>
+        <p>
+          Tot aici puteti sa va schimbati parola, poza de profil sa stergeti contul sau sa accesati pagina de admin(daca aveti dreptul).
+        </p>
+        
+      </section>
+      <section id="admin">
+        <!-- review? -->
+        <h2>Admin page</h2>
+        <p>
+          Pagina de admin este special conceputa pentru a administra intreaga aplicatie usor si intuitiv.
+          <img src="images/admin1.png" width="100%">
+          Aici putem observa o mica statistica despre website.
+        </p>
+        <p>
+          Tot de pe pagina de admin putem vizualiza toti utilizatorii aplicatiei accesand subcategoria <b>Users</b> din categoria <i>Members</i>. Avem si posibilitatea de a sterge un utilizator selectandul si apasand butonul de stergere.
+          <img src="images/admin-users.png" width="100%">
+        </p>
+        <p>
+          Pentru a adauga un admin sau un GM putem foarte simplu sa accesam sectiunea <b>Add Admin</b> selectand un user si apasand butonul de <i>Add Admin</i>
+          <img src="images/admin-addadmin.png" width="100%">
+        </p>
+        <p>
+          Aici putem si adauga un user mai rapid fara a folosi pagina de register.
+        </p>
+
+        <p>
+          Pentru a vizualiza toate produsele putem folosi butonul <b>View products</b>, totodata de aici putem sa stergem unele produse.
+          <img src="images/viewprod.png" width="100%">
+        </p>
+        <p>
+          Butonul <i>View favorite</i> afiseaza lista cu toate obiectele favorite ale adminului.
+          <img src="images/fav.png" width="100%">
+        </p>
+        <p>
+          Pentru a vizualiza produsele aflate in mod asteptare(pending) si pentru a le modera putem apasa butonul <i>View Pending</i>
+          si putem selecta produsele pe care dorim sa le acceptam spre a fi afisate in site.
+          <img src="images/pending.png" width="100%">
+        </p>
+
+        <p>
+          Pentru import sau export de date in format CSV putem sa folosim pagina de <b>Import/Export</b>, cu o singura mentiune : Nu alterati ordinea campurilor descriptive (id,name,etc..) din CSV-ul generat la export. 
+          Pentru a importa date din format CSV, descarcati fisierul CSV folosind butonul export, apoi introduceti datele si folositi formul de import. Datele vor fi adaugate in baza de date simplu si rapid.
+          <img src="images/admin-impexp.png" width="100%">
+          
+        </p>
+      </section>
+
+        <section id="search">
+          <!-- review? -->
+          <h2>Search</h2>
+          <p>
+            Folosind pagina search putem cauta obiectele dorite in functie de orice criteriu, respectiv oricate criterii dorim, pentru a gasi usor produsul dorit. Putem filtra obiectele dupa nume, descriere, oras, an, tipul de bautura.
+            <img src="images/search.png" width="100%">
+          </p>
+
+        </section>
+
+        <section id="addproduct">
+          <h2>Add Product</h2>
+          <p>
+            Utilizand formularul de adaugare produs putem adauga un capac/eticheta/dop foarte usor completand datele necesare(nume,an,locatie,descriere,istorie,poza), locatia poate fi alesa foarte usor datorita auto-completarii de la Google Maps pentru o descriere a locatie cat mai exacta. Dupa apasarea butonului de <i>Add Product</i> obiectul trimis va fi verificat de un admin si apoi postat intr-un final.
+            <img src="images/addproduct.png" width="100%">
+          </p>
+
+          
+  </body>
+</html>
